@@ -4,7 +4,7 @@
  */
 package debtcontrol.form;
 
-import com.mysql.cj.xdevapi.Table;
+//import com.mysql.cj.xdevapi.Table;
 import debtcontrol.model.Korisnik;
 import debtcontrol.model.Racun;
 import debtcontrol.model.Status;

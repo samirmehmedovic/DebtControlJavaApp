@@ -4,7 +4,7 @@
  */
 package debtcontrol.form;
 
-import com.mysql.cj.conf.PropertyKey;
+//import com.mysql.cj.conf.PropertyKey;
 import debtcontrol.model.JedinicaMere;
 import debtcontrol.model.Proizvod;
 import debtcontrol.repository.ProizvodInterface;
@@ -96,6 +96,8 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
             }
         });
 
+        tblListaProizvoda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblListaProizvoda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tblListaProizvoda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
