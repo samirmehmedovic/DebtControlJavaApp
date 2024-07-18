@@ -72,13 +72,15 @@ public class PregledRacunaForm extends javax.swing.JDialog {
         jLabel11.setText("IME");
 
         txtIme2.setEditable(false);
-        txtIme2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtIme2.setBackground(new java.awt.Color(255, 255, 255));
+        txtIme2.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText("E-MAIL");
 
         txtEmail2.setEditable(false);
-        txtEmail2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtEmail2.setBackground(new java.awt.Color(255, 255, 255));
+        txtEmail2.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
 
         tblStavkeRacuna2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tblStavkeRacuna2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -88,19 +90,24 @@ public class PregledRacunaForm extends javax.swing.JDialog {
         lblIDRacun2.setText("ID RACUNA");
 
         txtIdRacuna2.setEditable(false);
+        txtIdRacuna2.setBackground(new java.awt.Color(255, 255, 255));
+        txtIdRacuna2.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setText("PREZIME");
 
         txtPrezime2.setEditable(false);
-        txtPrezime2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtPrezime2.setBackground(new java.awt.Color(255, 255, 255));
+        txtPrezime2.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setText("UKUPNO :");
 
         txtUkupno2.setEditable(false);
+        txtUkupno2.setBackground(new java.awt.Color(255, 255, 255));
         txtUkupno2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtUkupno2.setForeground(new java.awt.Color(255, 0, 0));
+        txtUkupno2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel15.setText("DATUM");
@@ -221,7 +228,7 @@ public class PregledRacunaForm extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();

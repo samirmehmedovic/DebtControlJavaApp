@@ -154,6 +154,8 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
 
         pnlIzmeneKorisnika.setBackground(new java.awt.Color(204, 255, 204));
 
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEmailKeyTyped(evt);
@@ -169,6 +171,8 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("IME ");
 
+        txtIme.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtIme.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtIme.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtImeKeyTyped(evt);
@@ -178,6 +182,8 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("PREZIME");
 
+        txtPrezime.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtPrezime.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtPrezime.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPrezimeKeyTyped(evt);
@@ -201,6 +207,8 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
         jLabel7.setText("ID");
 
         txtId.setEditable(false);
+        txtId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtId.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);

@@ -126,6 +126,7 @@ public class RacunForm extends javax.swing.JDialog {
         jLabel3.setText("PRONADJITE KORISNIKA");
 
         tblKorisnici.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblKorisnici.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tblKorisnici.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -209,6 +210,7 @@ public class RacunForm extends javax.swing.JDialog {
         jLabel1.setText("IME");
 
         txtIme.setEditable(false);
+        txtIme.setBackground(new java.awt.Color(255, 255, 255));
         txtIme.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtIme.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -216,10 +218,12 @@ public class RacunForm extends javax.swing.JDialog {
         jLabel2.setText("E-MAIL");
 
         txtEmail.setEditable(false);
+        txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tblStavkeRacuna.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblStavkeRacuna.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jScrollPane2.setViewportView(tblStavkeRacuna);
 
         btnUnesiteProizvod.setBackground(new java.awt.Color(153, 204, 255));
@@ -245,6 +249,7 @@ public class RacunForm extends javax.swing.JDialog {
         lblIDRacun.setText("ID RACUNA");
 
         txtIdRacuna.setEditable(false);
+        txtIdRacuna.setBackground(new java.awt.Color(255, 255, 255));
         txtIdRacuna.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtIdRacuna.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -274,6 +279,7 @@ public class RacunForm extends javax.swing.JDialog {
         jLabel5.setText("PREZIME");
 
         txtPrezime.setEditable(false);
+        txtPrezime.setBackground(new java.awt.Color(255, 255, 255));
         txtPrezime.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtPrezime.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -281,6 +287,7 @@ public class RacunForm extends javax.swing.JDialog {
         jLabel4.setText("UKUPNO :");
 
         txtUkupno.setEditable(false);
+        txtUkupno.setBackground(new java.awt.Color(255, 255, 255));
         txtUkupno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtUkupno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 

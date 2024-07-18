@@ -66,7 +66,7 @@ public class DodajProizvodForm extends javax.swing.JDialog {
 
         txtKolicina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtKolicina.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnlUnesiteNoviProizvod.add(txtKolicina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 212, -1));
+        pnlUnesiteNoviProizvod.add(txtKolicina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 202, 212, 30));
 
         btnSacuvaj.setBackground(new java.awt.Color(153, 204, 255));
         btnSacuvaj.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

@@ -167,7 +167,7 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
 
         pnlIzmenaProizvoda.setBackground(new java.awt.Color(204, 255, 204));
 
-        txtKolicina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtKolicina.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtKolicina.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnSacuvajIzmeneProizvoda.setBackground(new java.awt.Color(153, 204, 255));
@@ -191,7 +191,7 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
         lblKolicina.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblKolicina.setText("KOLIČINA");
 
-        txtNazivProizvoda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNazivProizvoda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtNazivProizvoda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNazivProizvoda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,7 +199,7 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
             }
         });
 
-        txtCenaProizvoda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCenaProizvoda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtCenaProizvoda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         comboBoxJedinicaMere.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -209,7 +209,7 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
         jLabel2.setText("ID");
 
         txtId.setEditable(false);
-        txtId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtId.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnOdustaniOdIzmena.setBackground(new java.awt.Color(204, 204, 255));

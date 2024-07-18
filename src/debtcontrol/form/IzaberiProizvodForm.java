@@ -104,10 +104,12 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
         pnlProizvod.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         txtNaziv.setEditable(false);
+        txtNaziv.setBackground(new java.awt.Color(255, 255, 255));
         txtNaziv.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtNaziv.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtCena.setEditable(false);
+        txtCena.setBackground(new java.awt.Color(255, 255, 255));
         txtCena.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtCena.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
