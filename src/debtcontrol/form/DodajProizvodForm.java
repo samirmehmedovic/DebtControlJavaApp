@@ -64,9 +64,9 @@ public class DodajProizvodForm extends javax.swing.JDialog {
         pnlUnesiteNoviProizvod.setBackground(new java.awt.Color(204, 255, 204));
         pnlUnesiteNoviProizvod.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtKolicina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtKolicina.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtKolicina.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnlUnesiteNoviProizvod.add(txtKolicina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 202, 212, 30));
+        pnlUnesiteNoviProizvod.add(txtKolicina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 212, 30));
 
         btnSacuvaj.setBackground(new java.awt.Color(153, 204, 255));
         btnSacuvaj.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -98,17 +98,17 @@ public class DodajProizvodForm extends javax.swing.JDialog {
         lblKolicina.setText("KOLIČINA");
         pnlUnesiteNoviProizvod.add(lblKolicina, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 143, -1));
 
-        txtNazivProizvoda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNazivProizvoda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtNazivProizvoda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnlUnesiteNoviProizvod.add(txtNazivProizvoda, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 212, -1));
+        pnlUnesiteNoviProizvod.add(txtNazivProizvoda, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 102, 212, 30));
 
-        txtCenaProizvoda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCenaProizvoda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtCenaProizvoda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnlUnesiteNoviProizvod.add(txtCenaProizvoda, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 212, -1));
+        pnlUnesiteNoviProizvod.add(txtCenaProizvoda, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 212, 30));
 
         comboBoxJedinicaMere.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         comboBoxJedinicaMere.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnlUnesiteNoviProizvod.add(comboBoxJedinicaMere, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 210, -1));
+        pnlUnesiteNoviProizvod.add(comboBoxJedinicaMere, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 210, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         pnlUnesiteNoviProizvod.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 690, -1));
@@ -118,16 +118,16 @@ public class DodajProizvodForm extends javax.swing.JDialog {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlUnesiteNoviProizvod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(130, 130, 130))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlUnesiteNoviProizvod, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
