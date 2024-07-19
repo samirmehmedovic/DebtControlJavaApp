@@ -16,6 +16,7 @@ public class KlubForm extends javax.swing.JFrame {
     public KlubForm() {
         initComponents();
         setLocationRelativeTo(null);
+     //   setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**

@@ -73,14 +73,14 @@ public class PregledRacunaForm extends javax.swing.JDialog {
 
         txtIme2.setEditable(false);
         txtIme2.setBackground(new java.awt.Color(255, 255, 255));
-        txtIme2.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
+        txtIme2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText("E-MAIL");
 
         txtEmail2.setEditable(false);
         txtEmail2.setBackground(new java.awt.Color(255, 255, 255));
-        txtEmail2.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
+        txtEmail2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         tblStavkeRacuna2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tblStavkeRacuna2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -98,7 +98,7 @@ public class PregledRacunaForm extends javax.swing.JDialog {
 
         txtPrezime2.setEditable(false);
         txtPrezime2.setBackground(new java.awt.Color(255, 255, 255));
-        txtPrezime2.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
+        txtPrezime2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setText("UKUPNO :");
@@ -140,11 +140,10 @@ public class PregledRacunaForm extends javax.swing.JDialog {
                                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(pnlRacun2Layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addGroup(pnlRacun2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtIdRacuna2)
-                                    .addComponent(lblIDRacun2, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
-                                .addGap(36, 36, 36)
+                                .addGroup(pnlRacun2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtIdRacuna2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblIDRacun2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(45, 45, 45)
                                 .addGroup(pnlRacun2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
                                     .addComponent(txtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))

@@ -5,6 +5,8 @@
 package debtcontrol.main;
 
 import debtcontrol.form.KlubForm;
+import debtcontrol.form.LogInForm;
+
 import debtcontrol.form.RacunForm;
 import javax.swing.*;
 
@@ -15,11 +17,14 @@ import javax.swing.*;
 public class Start {
     public static void main(String[] args) {
         
+        
+        LogInForm lf = new LogInForm();
+        lf.setVisible(true);
       
-        KlubForm kf = new KlubForm();
-        kf.setVisible(true);
- //       kf.setLocationRelativeTo(null);
-        kf.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//        KlubForm kf = new KlubForm();
+//        kf.setVisible(true);
+// //       kf.setLocationRelativeTo(null);
+//        kf.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     
 

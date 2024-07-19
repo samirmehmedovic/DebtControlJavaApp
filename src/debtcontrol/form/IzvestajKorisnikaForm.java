@@ -65,6 +65,9 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
         proizvodInterface = new ProizvodInterfaceImpl();
         stavkeRacunaInterface = new StavkaRacunaInterfaceImpl();
         poslatiMailInterface = new PoslatiMailInterfaceImpl();
+        
+        lblIzvestajZaRacune.setVisible(false);
+        txtIznosRacuna.setVisible(false);
 
         populateTableKorisnici();
 
@@ -106,6 +109,8 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
         btnStornirajRacun = new javax.swing.JButton();
         btnPregledracuna = new javax.swing.JButton();
         btnAktivniNeplaceni = new javax.swing.JButton();
+        lblIzvestajZaRacune = new javax.swing.JLabel();
+        txtIznosRacuna = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("IZVEŠTAJ ZA KORISNIKE ");
@@ -295,6 +300,12 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
             }
         });
 
+        lblIzvestajZaRacune.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        lblIzvestajZaRacune.setForeground(new java.awt.Color(255, 0, 51));
+
+        txtIznosRacuna.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtIznosRacuna.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout pnlIzvestajLayout = new javax.swing.GroupLayout(pnlIzvestaj);
         pnlIzvestaj.setLayout(pnlIzvestajLayout);
         pnlIzvestajLayout.setHorizontalGroup(
@@ -304,13 +315,6 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
                     .addGroup(pnlIzvestajLayout.createSequentialGroup()
                         .addGap(231, 231, 231)
                         .addComponent(lblRacuni, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlIzvestajLayout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(btnStornirajRacun, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(184, 184, 184)
-                        .addComponent(btnPregledracuna, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(btnPlatiRacun, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlIzvestajLayout.createSequentialGroup()
                         .addGroup(pnlIzvestajLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlIzvestajLayout.createSequentialGroup()
@@ -324,7 +328,21 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
                         .addGap(48, 48, 48)
                         .addGroup(pnlIzvestajLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlIzvestajLayout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addGroup(pnlIzvestajLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlIzvestajLayout.createSequentialGroup()
+                                .addComponent(btnStornirajRacun, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(184, 184, 184)
+                                .addComponent(btnPregledracuna, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlIzvestajLayout.createSequentialGroup()
+                                .addGap(103, 103, 103)
+                                .addComponent(lblIzvestajZaRacune, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(16, 16, 16)
+                        .addGroup(pnlIzvestajLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnPlatiRacun, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                            .addComponent(txtIznosRacuna))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnlIzvestajLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -375,8 +393,15 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnPlaceniRacuni)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnStorniraniRacuni)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlIzvestajLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlIzvestajLayout.createSequentialGroup()
+                        .addComponent(btnStorniraniRacuni)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlIzvestajLayout.createSequentialGroup()
+                        .addGroup(pnlIzvestajLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblIzvestajZaRacune)
+                            .addComponent(txtIznosRacuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)))
                 .addComponent(btnAktivniNeplaceni)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -412,7 +437,7 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         pack();
@@ -438,6 +463,9 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
 
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
+        
+        lblIzvestajZaRacune.setVisible(false);
+        txtIznosRacuna.setVisible(false);
 
 
     }//GEN-LAST:event_btnSviRacuniActionPerformed
@@ -458,21 +486,33 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
 
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
+        
+        lblIzvestajZaRacune.setText("Ukupan iznos svih NEAKTIVNIH-PLAĆENIH  računa iznosi: ");
+        
+        lblIzvestajZaRacune.setVisible(true);
+        txtIznosRacuna.setVisible(true);
+        
+        double ukupanIznos =0;
+        for(Racun r : racuni){
+         ukupanIznos = ukupanIznos+r.getUkupno();   
+        }
+        txtIznosRacuna.setText(String.valueOf(ukupanIznos));
 
 
     }//GEN-LAST:event_btnPlaceniRacuniActionPerformed
 
     private void btnPlatiRacunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlatiRacunActionPerformed
 
-        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA IZMIRITE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
-
-        if (odgovor == JOptionPane.NO_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.YES_OPTION) {
+//        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA IZMIRITE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
+//
+//        if (odgovor == JOptionPane.NO_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
+//            return;
+//        }
+ //       else if (odgovor == JOptionPane.YES_OPTION) {
 
             int selectedRow = tblRacuniKorisnika.getSelectedRow();
 
@@ -487,6 +527,16 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
                     JOptionPane.showMessageDialog(null, "OVAJ RAČUN JE PlAĆEN ILI JE STORNIRAN I NE MOŽE SE IZMIRITI");
                     return;
                 }
+                 int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA IZMIRITE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
+
+                if (odgovor == JOptionPane.NO_OPTION) {
+                     return;
+                } else if (odgovor == JOptionPane.CLOSED_OPTION) {
+                     return;
+                } else if (odgovor == JOptionPane.CANCEL_OPTION) {
+                    return;
+                } else if (odgovor == JOptionPane.YES_OPTION) {
+
 
                 racunInterface.platiRacun(r.getIdRacuna());
                 List<StavkaRacuna> stavke = stavkeRacunaInterface.stavkePoRacunu(r.getIdRacuna());
@@ -494,6 +544,10 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
                     proizvodInterface.oduzmiSaStanjaProizvoda(stavke.get(i).getProizvod(), stavke.get(i).getKolicina());
                 }
 
+                
+                
+                
+                
                 LocalDate datum = LocalDate.now();
                 DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd.MM.yyyy.");
 
@@ -529,21 +583,31 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
 
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
+        lblIzvestajZaRacune.setText("Ukupan iznos svih STORNIRANIH  računa iznosi: ");
+        
+        lblIzvestajZaRacune.setVisible(true);
+        txtIznosRacuna.setVisible(true);
+        
+        double ukupanIznos =0;
+        for(Racun r : racuni){
+         ukupanIznos = ukupanIznos+r.getUkupno();   
+        }
+        txtIznosRacuna.setText(String.valueOf(ukupanIznos));
 
 
     }//GEN-LAST:event_btnStorniraniRacuniActionPerformed
 
     private void btnStornirajRacunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStornirajRacunActionPerformed
 
-        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA STORNIRATE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
-
-        if (odgovor == JOptionPane.NO_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.YES_OPTION) {
+//        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA STORNIRATE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
+//
+//        if (odgovor == JOptionPane.NO_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.YES_OPTION) {
 
             int selectetedRow = tblRacuniKorisnika.getSelectedRow();
 
@@ -554,33 +618,39 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
                 TabelaRacun tr = (TabelaRacun) tblRacuniKorisnika.getModel();
                 Racun r = tr.getSelectedRacun(selectetedRow);
 
-                racunInterface.stornirajRacun(r);
 
-                List<StavkaRacuna> stavke = stavkeRacunaInterface.stavkePoRacunu(r.getIdRacuna());
+            int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA STORNIRATE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
 
-                for (int i = 0; i < stavke.size(); i++) {
-                    proizvodInterface.oduzmiSaStanjaProizvoda(stavke.get(i).getProizvod(), stavke.get(i).getKolicina());
+                switch (odgovor) {
+                    case JOptionPane.NO_OPTION:
+                        return;
+                    case JOptionPane.CLOSED_OPTION:
+                        return;
+                    case JOptionPane.CANCEL_OPTION:
+                        return;
+                    case JOptionPane.YES_OPTION:
+                        racunInterface.stornirajRacun(r);
+                        List<StavkaRacuna> stavke = stavkeRacunaInterface.stavkePoRacunu(r.getIdRacuna());
+                        for (int i = 0; i < stavke.size(); i++) {
+                            proizvodInterface.oduzmiSaStanjaProizvoda(stavke.get(i).getProizvod(), stavke.get(i).getKolicina());
+                        }       populateTableRacuni();
+                        btnPlatiRacun.setVisible(false);
+                        LocalDate datum = LocalDate.now();
+                        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd.MM.yyyy.");
+                        String datumFormat = datum.format(formater);
+                       
+                        
+                        String poruka = " Poštovani,\n"
+                                + "Danas, " + datumFormat + " u Klubu zaposlenih storniran je Vaš račun, broj: " + r.getIdRacuna() + " u iznosu od  " + r.getUkupno() + " dinara\n" + "\n"
+                                
+                                + "Srdačan pozdrav,\n"
+                                + "Služba usluga";
+                        poslatiMailInterface.poslatiMail(txtEmail.getText().trim(), poruka);    //"smehmedoviccc@gmail.com"
+                        dispose();
+                        break;
+                    default:
+                        break;
                 }
-                populateTableRacuni();
-
-                btnPlatiRacun.setVisible(false);
-
-                LocalDate datum = LocalDate.now();
-                DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd.MM.yyyy.");
-
-                String datumFormat = datum.format(formater);
-
-                String poruka = " Poštovani,\n"
-                        + "Danas, " + datumFormat + " u Klubu zaposlenih storniran je Vaš račun, broj: " + r.getIdRacuna() + " u iznosu od  " + r.getUkupno() + " dinara\n" + "\n"
-                      
-                        + "Srdačan pozdrav,\n"
-                        + "Služba usluga";
-
-                poslatiMailInterface.poslatiMail(txtEmail.getText().trim(), poruka);    //"smehmedoviccc@gmail.com"
-
-                dispose();
-
-            }
 
 
     }//GEN-LAST:event_btnStornirajRacunActionPerformed
@@ -660,6 +730,18 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
 
         tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
+        
+        lblIzvestajZaRacune.setText("Ukupan iznos svih AKTIVNIH-NEPLAĆENIH  računa iznosi: ");
+        
+        lblIzvestajZaRacune.setVisible(true);
+        txtIznosRacuna.setVisible(true);
+        
+        double ukupanIznos =0;
+        for(Racun r : racuni){
+         ukupanIznos = ukupanIznos+r.getUkupno();   
+        }
+        txtIznosRacuna.setText(String.valueOf(ukupanIznos));
+        
     }//GEN-LAST:event_btnAktivniNeplaceniActionPerformed
 
 
@@ -680,6 +762,7 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblIzvestajZaRacune;
     private javax.swing.JLabel lblListaKorisnika1;
     private javax.swing.JLabel lblRacuni;
     private javax.swing.JPanel pnlIzvestaj;
@@ -689,6 +772,7 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtIme;
+    private javax.swing.JTextField txtIznosRacuna;
     private javax.swing.JTextField txtPrezime;
     // End of variables declaration//GEN-END:variables
 
