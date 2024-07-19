@@ -82,7 +82,7 @@ public class LogInForm extends javax.swing.JFrame {
         jLabel2.setText("             UNESITE   LOZINKU");
 
         lblError.setForeground(new java.awt.Color(255, 51, 51));
-        lblError.setText("UNELI  STE  POGREŠNU  LOZINKU!!!      POKUŠAJTE  PONOVO");
+        lblError.setText("UNELI  STE  POGREŠNU  LOZINKU !!!      POKUŠAJTE  PONOVO");
 
         btnSacuvaj.setBackground(new java.awt.Color(153, 204, 255));
         btnSacuvaj.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
