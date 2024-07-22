@@ -4,6 +4,7 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.IzaberiProizvodController;
 import debtcontrol.model.Proizvod;
 import debtcontrol.model.StavkaRacuna;
 
@@ -37,6 +38,8 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
         stavkeRacunaInterface = new StavkaRacunaInterfaceImpl();
 
         initComponents();
+        
+        txtId.setVisible(false);
 
         btnBlanko.setVisible(false);
 
@@ -46,6 +49,10 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
         pnlProizvod.setVisible(true);
+        
+        
+        
+        
     }
 
   
@@ -64,6 +71,7 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
+        txtId = new javax.swing.JTextField();
         pnlProizvodi = new javax.swing.JPanel();
         btnKafa = new javax.swing.JButton();
         btnEspresso = new javax.swing.JButton();
@@ -159,7 +167,8 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
                         .addGroup(pnlProizvodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNaziv, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnIzadji, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnIzadji, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(pnlProizvodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlProizvodLayout.createSequentialGroup()
                                 .addGap(304, 304, 304)
@@ -184,9 +193,14 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
         pnlProizvodLayout.setVerticalGroup(
             pnlProizvodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlProizvodLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(lblError)
-                .addGap(14, 14, 14)
+                .addGroup(pnlProizvodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlProizvodLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(lblError))
+                    .addGroup(pnlProizvodLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addGap(36, 36, 36)
                 .addGroup(pnlProizvodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -681,10 +695,12 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
     private void btnKafaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKafaActionPerformed
 
 
-        proizvod = proizvodInterface.pronadjiProizvod(1);
+//        proizvod = proizvodInterface.pronadjiProizvod(1);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
 
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 1);
       
 
 
@@ -692,69 +708,83 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
 
     private void btnSacuvajProizvodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajProizvodActionPerformed
 
-        if (txtNaziv.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "NISTE IZABRALI PROIZVOD");
-            return;
-        }
-
-        try {
-
-            Integer kolicina = (Integer) jSpinner1.getValue();
-            int intValue = kolicina.intValue();
-
-            if (intValue == 0) {
-                JOptionPane.showMessageDialog(this, "NISTE UNELI KOLIČINU");
-                return;
-            } else {
-
-                stavkaRacuna = new StavkaRacuna(0, intValue, Double.parseDouble(txtCena.getText().trim()), intValue * Double.parseDouble(txtCena.getText().trim()), 0, proizvod);
-
-                dispose();
-            }
-        } catch (Exception ex) {
-            System.out.println("Greska prilikom unosa količine" + " " + " " + ex.getMessage());
-        }
-
-        System.out.println("OVO JE NOVI PROIZVOD  " + proizvod.getKolicina());
-
+//        if (txtNaziv.getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "NISTE IZABRALI PROIZVOD");
+//            return;
+//        }
+//
+//        try {
+//
+//            Integer kolicina = (Integer) jSpinner1.getValue();
+//            int intValue = kolicina.intValue();
+//
+//            if (intValue == 0) {
+//                JOptionPane.showMessageDialog(this, "NISTE UNELI KOLIČINU");
+//                return;
+//            } else {
+//
+//                stavkaRacuna = new StavkaRacuna(0, intValue, Double.parseDouble(txtCena.getText().trim()), intValue * Double.parseDouble(txtCena.getText().trim()), 0, proizvod);
+//
+//                dispose();
+//            }
+//        } catch (Exception ex) {
+//            System.out.println("Greska prilikom unosa količine" + " " + " " + ex.getMessage());
+//        }
+//
+//        System.out.println("OVO JE NOVI PROIZVOD  " + proizvod.getKolicina());
+        
+        IzaberiProizvodController.proveraProizvoda(txtNaziv, jSpinner1);
+    
+         stavkaRacuna =  IzaberiProizvodController.sacuvajProizvod(txtNaziv, txtCena, txtId, jSpinner1,  this);
+            
     }//GEN-LAST:event_btnSacuvajProizvodActionPerformed
 
     private void btnEspressoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspressoActionPerformed
 
-        proizvod = proizvodInterface.pronadjiProizvod(7);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(7);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 7);
 
 
     }//GEN-LAST:event_btnEspressoActionPerformed
 
     private void btnKafaSaMlekomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKafaSaMlekomActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(2);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(2);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 2);
     }//GEN-LAST:event_btnKafaSaMlekomActionPerformed
 
     private void btnKafaKabezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKafaKabezaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(13);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(13);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 13);
     }//GEN-LAST:event_btnKafaKabezaActionPerformed
 
     private void btnKapucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKapucinoActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(3);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(3);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 3);
     }//GEN-LAST:event_btnKapucinoActionPerformed
 
     private void btnNeskafaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeskafaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(5);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(5);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 5);
     }//GEN-LAST:event_btnNeskafaActionPerformed
 
     private void btnEspresoSaMlekomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspresoSaMlekomActionPerformed
@@ -762,6 +792,8 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
 
         txtNaziv.setText(proizvod.getNaziv());
         txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 4);
     }//GEN-LAST:event_btnEspresoSaMlekomActionPerformed
 
     private void btnMlekoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMlekoActionPerformed
@@ -770,6 +802,8 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
 
         txtNaziv.setText(proizvod.getNaziv());
         txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 8);
 
         //      txtKolicina.setText("1");
     }//GEN-LAST:event_btnMlekoActionPerformed
@@ -779,6 +813,8 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
 
         txtNaziv.setText(proizvod.getNaziv());
         txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 19);
     }//GEN-LAST:event_btnCajNanaActionPerformed
 
     private void btnCedjenaPomorandzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCedjenaPomorandzaActionPerformed
@@ -786,118 +822,152 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
 
         txtNaziv.setText(proizvod.getNaziv());
         txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 25);
     }//GEN-LAST:event_btnCedjenaPomorandzaActionPerformed
 
     private void btnMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(6);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(6);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena, txtId,6);
     }//GEN-LAST:event_btnMedActionPerformed
 
     private void btnCajZeleniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajZeleniActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(20);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(20);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 20);
     }//GEN-LAST:event_btnCajZeleniActionPerformed
 
     private void btnCedjeniGrejpfrutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCedjeniGrejpfrutActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(26);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(26);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 26);
     }//GEN-LAST:event_btnCedjeniGrejpfrutActionPerformed
 
     private void btnToplaCokoladaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToplaCokoladaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(9);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(9);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 9);
     }//GEN-LAST:event_btnToplaCokoladaActionPerformed
 
     private void btnCajJabukaCimetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajJabukaCimetActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(21);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(21);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 21);
     }//GEN-LAST:event_btnCajJabukaCimetActionPerformed
 
     private void btnCedjeniMiksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCedjeniMiksActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(27);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(27);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 27);
     }//GEN-LAST:event_btnCedjeniMiksActionPerformed
 
     private void btnRosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRosaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(10);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(10);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 10);
     }//GEN-LAST:event_btnRosaActionPerformed
 
     private void btnCajDjumbirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajDjumbirActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(22);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(22);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 22);
     }//GEN-LAST:event_btnCajDjumbirActionPerformed
 
     private void btnLimunadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimunadaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(28);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(28);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 28);
     }//GEN-LAST:event_btnLimunadaActionPerformed
 
     private void btnKiselaVodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKiselaVodaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(12);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(12);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 12);
     }//GEN-LAST:event_btnKiselaVodaActionPerformed
 
     private void btnCajKamilicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajKamilicaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(23);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(23);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 23);
     }//GEN-LAST:event_btnCajKamilicaActionPerformed
 
     private void btnKokaKolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKokaKolaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(29);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(29);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 29);
     }//GEN-LAST:event_btnKokaKolaActionPerformed
 
     private void btnSokNarandzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokNarandzaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(14);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(14);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 14);
     }//GEN-LAST:event_btnSokNarandzaActionPerformed
 
     private void btnCajHibiskusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajHibiskusActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(24);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(24);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 24);
     }//GEN-LAST:event_btnCajHibiskusActionPerformed
 
     private void btnSvepsBiterLemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSvepsBiterLemonActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(30);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(30);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 30);
     }//GEN-LAST:event_btnSvepsBiterLemonActionPerformed
 
     private void btnSokBorovnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokBorovnicaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(15);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(15);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 15);
     }//GEN-LAST:event_btnSokBorovnicaActionPerformed
 
     private void btnBlankoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBlankoActionPerformed
@@ -905,10 +975,12 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBlankoActionPerformed
 
     private void btnSvepsTangerinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSvepsTangerinaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(31);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        proizvod = proizvodInterface.pronadjiProizvod(31);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+        
+        IzaberiProizvodController.izaberiProizvod(txtNaziv, txtCena,txtId, 31);
     }//GEN-LAST:event_btnSvepsTangerinaActionPerformed
 
     private void btnIzadjiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzadjiActionPerformed
@@ -957,6 +1029,14 @@ public class IzaberiProizvodForm extends javax.swing.JDialog {
     private javax.swing.JPanel pnlProizvod;
     private javax.swing.JPanel pnlProizvodi;
     private javax.swing.JTextField txtCena;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNaziv;
     // End of variables declaration//GEN-END:variables
+
+
+public StavkaRacuna vratiStavku(){
+    return stavkaRacuna;
+}
+
+
 }

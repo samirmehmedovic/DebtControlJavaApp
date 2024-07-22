@@ -4,6 +4,7 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.LIstaKorisnikaController;
 import debtcontrol.model.Korisnik;
 import debtcontrol.repository.KorisnikInterface;
 import debtcontrol.repositoryImpl.KorisnikInterfaceImpl;
@@ -85,6 +86,11 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
             }
         ));
         tblListaKorisnika.setSelectionBackground(new java.awt.Color(204, 255, 255));
+        tblListaKorisnika.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListaKorisnikaMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblListaKorisnika);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -343,46 +349,51 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
 
     private void btnSacuvajKorisnikaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajKorisnikaActionPerformed
 
-        boolean prihvata = radiooBtnPrihvata.isSelected();
-        boolean nePrihvata = radioBtnNePrihvata.isSelected();
+//        boolean prihvata = radiooBtnPrihvata.isSelected();
+//        boolean nePrihvata = radioBtnNePrihvata.isSelected();
+//
+//        if (txtIme.getText().isEmpty() || txtIme.getText().matches(".*[\\d\\W].*")) {
+//            JOptionPane.showMessageDialog(null, "NIste uneli ime na adekvatan nacin ");
+//            return;
+//        }
+//        if (txtPrezime.getText().isEmpty() || txtPrezime.getText().matches(".*[\\d\\W].*")) {
+//            JOptionPane.showMessageDialog(null, "NIste uneli prezime na adekvatan nacin ");
+//            return;
+//        }
+//        if (txtEmail.getText().isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "NIste uneli Email na adekvatan nacin ");
+//            return;
+//        }
+//
+//        if (prihvata) {
+//
+//            Korisnik korisnik = new Korisnik(Integer.parseInt(txtId.getText()), txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), true);
+//            korisnikInterface.izmeniKorisnika(korisnik);
+//
+//            System.out.println("Korisnik je " + korisnik);
+//
+//        } else if (nePrihvata) {
+//            Korisnik korisnik = new Korisnik(Integer.parseInt(txtId.getText()), txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), false);
+//            korisnikInterface.izmeniKorisnika(korisnik);
+//
+//            System.out.println("Korisnik je " + korisnik);
+//        }
+//
+//        populateTabele();
+//
+//        pnlIzmeneKorisnika.setVisible(false);
 
-        if (txtIme.getText().isEmpty() || txtIme.getText().matches(".*[\\d\\W].*")) {
-            JOptionPane.showMessageDialog(null, "NIste uneli ime na adekvatan nacin ");
-            return;
-        }
-        if (txtPrezime.getText().isEmpty() || txtPrezime.getText().matches(".*[\\d\\W].*")) {
-            JOptionPane.showMessageDialog(null, "NIste uneli prezime na adekvatan nacin ");
-            return;
-        }
-        if (txtEmail.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "NIste uneli Email na adekvatan nacin ");
-            return;
-        }
 
-        if (prihvata) {
-
-            Korisnik korisnik = new Korisnik(Integer.parseInt(txtId.getText()), txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), true);
-            korisnikInterface.izmeniKorisnika(korisnik);
-
-            System.out.println("Korisnik je " + korisnik);
-
-        } else if (nePrihvata) {
-            Korisnik korisnik = new Korisnik(Integer.parseInt(txtId.getText()), txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), false);
-            korisnikInterface.izmeniKorisnika(korisnik);
-
-            System.out.println("Korisnik je " + korisnik);
-        }
-
-        populateTabele();
-
-        pnlIzmeneKorisnika.setVisible(false);
+        LIstaKorisnikaController.sacuvajKorisnika(radiooBtnPrihvata, radioBtnNePrihvata, txtIme, txtPrezime, txtEmail, txtId, pnlIzmeneKorisnika, tblListaKorisnika);
 
 
     }//GEN-LAST:event_btnSacuvajKorisnikaActionPerformed
 
     private void btnOdustaniOdIzmeneKorisnikaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOdustaniOdIzmeneKorisnikaActionPerformed
         pnlIzmeneKorisnika.setVisible(false);
-        populateTabele();
+        LIstaKorisnikaController.popuniTabeluKorisnika(tblListaKorisnika);
+        
+     //   populateTabele();
     }//GEN-LAST:event_btnOdustaniOdIzmeneKorisnikaActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
@@ -390,84 +401,92 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void btnObrisi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObrisi1ActionPerformed
-        int selectedRow = tblListaKorisnika.getSelectedRow();
+//        int selectedRow = tblListaKorisnika.getSelectedRow();
+//
+//        if (selectedRow == -1) {
+//            JOptionPane.showMessageDialog(this, "NISTE SELEKTOVALI KORISNIKA KOJEG ŽELITE DA IZBRIŠETE");
+//            return;
+//        }
+//
+//        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA UKLONITE OVOG KORISNIKA IZ LISTE");
+//
+//        if (odgovor == JOptionPane.NO_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
+//            return;
+//
+//        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.YES_OPTION) {
+//
+//            TabelaKorisnik tk = (TabelaKorisnik) tblListaKorisnika.getModel();
+//            Korisnik k = tk.getSelectedZaposleni(selectedRow);
+//
+//            korisnikInterface.izbrisiKorisnika(k);
+//            populateTabele();
+//        }
 
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "NISTE SELEKTOVALI KORISNIKA KOJEG ŽELITE DA IZBRIŠETE");
-            return;
-        }
-
-        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA UKLONITE OVOG KORISNIKA IZ LISTE");
-
-        if (odgovor == JOptionPane.NO_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
-            return;
-
-        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.YES_OPTION) {
-
-            TabelaKorisnik tk = (TabelaKorisnik) tblListaKorisnika.getModel();
-            Korisnik k = tk.getSelectedZaposleni(selectedRow);
-
-            korisnikInterface.izbrisiKorisnika(k);
-            populateTabele();
-        }
+        LIstaKorisnikaController.obrisiKorisnika(tblListaKorisnika);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnObrisi1ActionPerformed
 
     private void btnIzmeni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzmeni1ActionPerformed
 
-        int selectedRow = tblListaKorisnika.getSelectedRow();
+//        int selectedRow = tblListaKorisnika.getSelectedRow();
+//
+//        if (selectedRow == -1) {
+//            JOptionPane.showMessageDialog(null, "NISTE SELEKTOVALI KORISNIKA");
+//            return;
+//        }
+//        pnlIzmeneKorisnika.setVisible(true);
+//
+//        TabelaKorisnik tk = (TabelaKorisnik) tblListaKorisnika.getModel();
+//
+//        Korisnik k = tk.getSelectedZaposleni(selectedRow);
+//
+//        txtId.setText(String.valueOf(k.getIdKorisnik()));
+//        txtIme.setText(k.getIme());
+//        txtPrezime.setText(k.getPrezime());
+//        txtEmail.setText(k.getMail());
+//
+//
+//        if (k.isMailObavestenja() == true) {
+//            radiooBtnPrihvata.setSelected(true);
+//            radioBtnNePrihvata.setSelected(false);
+//        } else {
+//            radioBtnNePrihvata.setSelected(true);
+//            radiooBtnPrihvata.setSelected(false);
+//        }
 
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "NISTE SELEKTOVALI KORISNIKA");
-            return;
-        }
-        pnlIzmeneKorisnika.setVisible(true);
-
-        TabelaKorisnik tk = (TabelaKorisnik) tblListaKorisnika.getModel();
-
-        Korisnik k = tk.getSelectedZaposleni(selectedRow);
-
-        txtId.setText(String.valueOf(k.getIdKorisnik()));
-        txtIme.setText(k.getIme());
-        txtPrezime.setText(k.getPrezime());
-        txtEmail.setText(k.getMail());
-
-
-        if (k.isMailObavestenja() == true) {
-            radiooBtnPrihvata.setSelected(true);
-            radioBtnNePrihvata.setSelected(false);
-        } else {
-            radioBtnNePrihvata.setSelected(true);
-            radiooBtnPrihvata.setSelected(false);
-        }
+        LIstaKorisnikaController.izmeniKorisnika(tblListaKorisnika, pnlIzmeneKorisnika, txtId, txtIme, txtPrezime, txtEmail, radiooBtnPrihvata, radioBtnNePrihvata);
 
 // TODO add your handling code here:
     }//GEN-LAST:event_btnIzmeni1ActionPerformed
 
     private void txtImeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtImeKeyTyped
-        char c = evt.getKeyChar();
+//        char c = evt.getKeyChar();
+//
+//        if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
+//            evt.consume();
+//            JOptionPane.showMessageDialog(null, "NISTE UNELI IME NA ADEKVATAN NAČIN");
+//        } else {
+//
+//        }
 
-        if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
-            evt.consume();
-            JOptionPane.showMessageDialog(null, "NISTE UNELI IME NA ADEKVATAN NAČIN");
-        } else {
-
-        }
+        LIstaKorisnikaController.unosTeksta(evt, txtIme.getText().trim());
     }//GEN-LAST:event_txtImeKeyTyped
 
     private void txtPrezimeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrezimeKeyTyped
-        char c = evt.getKeyChar();
+//        char c = evt.getKeyChar();
+//
+//        if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
+//            evt.consume();
+//            JOptionPane.showMessageDialog(null, "NISTE UNELI PREZIME  NA ADEKVATAN NAČIN, UNOSITE SLOVA");
+//        } else {
+//
+//        }
 
-        if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
-            evt.consume();
-            JOptionPane.showMessageDialog(null, "NISTE UNELI PREZIME  NA ADEKVATAN NAČIN, UNOSITE SLOVA");
-        } else {
-
-        }
+        LIstaKorisnikaController.unosTeksta(evt, txtPrezime.getText().trim());
     }//GEN-LAST:event_txtPrezimeKeyTyped
 
     private void txtEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyTyped
@@ -480,6 +499,10 @@ public class ListaKorisnikaForm extends javax.swing.JDialog {
 //          
 //       }
     }//GEN-LAST:event_txtEmailKeyTyped
+
+    private void tblListaKorisnikaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListaKorisnikaMouseClicked
+      pnlIzmeneKorisnika.setVisible(false);
+    }//GEN-LAST:event_tblListaKorisnikaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

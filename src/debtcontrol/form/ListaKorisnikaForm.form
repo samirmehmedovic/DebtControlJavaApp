@@ -169,6 +169,9 @@
                       <Color blue="ff" green="ff" red="cc" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblListaKorisnikaMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

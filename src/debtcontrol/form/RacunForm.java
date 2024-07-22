@@ -4,6 +4,7 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.RacunController;
 import debtcontrol.model.Korisnik;
 import debtcontrol.model.Proizvod;
 import debtcontrol.model.Racun;
@@ -49,6 +50,7 @@ public class RacunForm extends javax.swing.JDialog {
     DodajProizvodForm dodajProizvodForm;
     StavkeRacunaInterface stavkeRacunaInterface;
     List<StavkaRacuna> stavke;
+    IzaberiProizvodForm izaberiProizvodForm;
     double ukupno;
     Racun r;
 
@@ -72,8 +74,10 @@ public class RacunForm extends javax.swing.JDialog {
         ukupno = 0;
         r = new Racun();
 
-        populateTable();
-        popuniTabeluStavkaRacuna();
+   //     populateTable();
+         RacunController.popuniTabeluKorisnici(tblKorisnici);
+//    RacunController.popuniTabeluStavkeRacuna(tblStavkeRacuna, stavke);
+//        popuniTabeluStavkaRacuna();
         searchText();
     }
 
@@ -428,129 +432,140 @@ public class RacunForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblKorisniciMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKorisniciMouseClicked
-        pnlRacun.setVisible(true);
-        int selectedRow = tblKorisnici.getSelectedRow();
-        TabelaKorisnik tz = (TabelaKorisnik) tblKorisnici.getModel();
+//        pnlRacun.setVisible(true);
+//        int selectedRow = tblKorisnici.getSelectedRow();
+//        TabelaKorisnik tz = (TabelaKorisnik) tblKorisnici.getModel();
+//
+//        Korisnik k = tz.getSelectedZaposleni(selectedRow);
+//
+//        txtIme.setText(k.getIme());
+//        txtPrezime.setText(k.getPrezime());
+//        txtEmail.setText(k.getMail());
+//
+//        jDateChooser1.setDate(new Date());
+//
+//        LocalDate ld = jDateChooser1.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-        Korisnik k = tz.getSelectedZaposleni(selectedRow);
 
-        txtIme.setText(k.getIme());
-        txtPrezime.setText(k.getPrezime());
-        txtEmail.setText(k.getMail());
-
-        jDateChooser1.setDate(new Date());
-
-        LocalDate ld = jDateChooser1.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        RacunController.izaberiKorisnika(pnlRacun, tblKorisnici, txtIme, txtPrezime, txtEmail, jDateChooser1);
+        
+        
+        
+        
 
        
     }//GEN-LAST:event_tblKorisniciMouseClicked
 
     private void btnUnesiteProizvodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnesiteProizvodActionPerformed
-        IzaberiProizvodForm ipf = new IzaberiProizvodForm(null, true);
-        ipf.setVisible(true);
-        ipf.setLocationRelativeTo(null);
+//        IzaberiProizvodForm ipf = new IzaberiProizvodForm(null, true);
+//        ipf.setVisible(true);
+//        ipf.setLocationRelativeTo(null);
+//
+//        if (ipf.stavkaRacuna == null) {
+//            return;
+//        } else {
+//
+//            StavkaRacuna sr = new StavkaRacuna(0, ipf.stavkaRacuna.getKolicina(), ipf.stavkaRacuna.getCenaProizvoda(), ipf.stavkaRacuna.getUkupno(), r.getIdRacuna(), ipf.stavkaRacuna.getProizvod());
+//
+//            stavke.add(sr);
+//            System.out.println(stavke.size());
+//
+//            ukupno();
+//
+//            System.out.println("Stavki u listi ima" + stavke.size());
+//            popuniTabeluStavkaRacuna();
+//        }
 
-        if (ipf.stavkaRacuna == null) {
-            return;
-        } else {
-
-            StavkaRacuna sr = new StavkaRacuna(0, ipf.stavkaRacuna.getKolicina(), ipf.stavkaRacuna.getCenaProizvoda(), ipf.stavkaRacuna.getUkupno(), r.getIdRacuna(), ipf.stavkaRacuna.getProizvod());
-
-            stavke.add(sr);
-            System.out.println(stavke.size());
-
-            ukupno();
-
-            System.out.println("Stavki u listi ima" + stavke.size());
-            popuniTabeluStavkaRacuna();
-        }
+        RacunController.unesiteProizvodeUListu(izaberiProizvodForm, stavke, txtUkupno, tblStavkeRacuna);
 
     }//GEN-LAST:event_btnUnesiteProizvodActionPerformed
 
     private void btnSacuvajRacunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajRacunActionPerformed
 
-        jDateChooser1.setDate(new Date());
+//        jDateChooser1.setDate(new Date());
+//
+//        LocalDate ld = jDateChooser1.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//
+//        System.out.println("Datum je " + ld);
+//
+//        Korisnik k = korisnikInterface.pronadjiKorisnika(txtEmail.getText().trim(), "");
+//        System.out.println("email je " + txtEmail.getText().trim());
+//
+//        if (k.isMailObavestenja() == false) {
+//            JOptionPane.showMessageDialog(null, "OVAJ KORISNIK NE ŽELI DA MU SE POŠALJE E-MAIL OBAVEŠTENJA");
+//            Racun racun = new Racun(0, ld, stavke, ukupno, k, Status.AKTIVAN_NEPLACEN);
+//
+//            int id = racunInterfacea.dodajRacunIvratiId(racun);
+//
+//            TabelaStavkeRacuna tsr = (TabelaStavkeRacuna) tblStavkeRacuna.getModel();
+//
+//            List<StavkaRacuna> stavkeRacuna = new ArrayList<>();
+//
+//            for (int i = 0; i < stavke.size(); i++) {
+//                StavkaRacuna sr = tsr.getSelectedStavka(i);
+//                sr.setRacunId(id);
+//                stavkeRacuna.add(sr);
+//                stavkeRacunaInterface.dodajStavkaRacuna(sr);
+//                proizvodInterface.dodajNaStanjeProizvoda(sr.getProizvod(), sr.getKolicina());
+//            }
+//            dispose();
+//            return;
+//
+//        }
+//
+//        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA SAČUVATE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
+//
+//        if (odgovor == JOptionPane.NO_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
+//            return;
+//
+//        } else if (odgovor == JOptionPane.YES_OPTION && k.isMailObavestenja() == true) {
+//
+//            Racun racun = new Racun(0, ld, stavke, ukupno, k, Status.AKTIVAN_NEPLACEN);
+//
+//            int id = racunInterfacea.dodajRacunIvratiId(racun);
+//
+//            TabelaStavkeRacuna tsr = (TabelaStavkeRacuna) tblStavkeRacuna.getModel();
+//
+//            List<StavkaRacuna> stavkeRacuna = new ArrayList<>();
+//
+//            for (int i = 0; i < stavke.size(); i++) {
+//                StavkaRacuna sr = tsr.getSelectedStavka(i);
+//                sr.setRacunId(id);
+//                stavkeRacuna.add(sr);
+//                stavkeRacunaInterface.dodajStavkaRacuna(sr);
+//                proizvodInterface.dodajNaStanjeProizvoda(sr.getProizvod(), sr.getKolicina());
+//            }
+//
+//            SimpleDateFormat datum = new SimpleDateFormat("dd.MM.yyyy.", new Locale("sr", "RS"));
+//            jDateChooser1.setDateFormatString(datum.toPattern());
+//            String datumFormat = datum.format(jDateChooser1.getDate());
+//       
+//            double ukupnoZaduzenje = 0;
+//
+//            List<Racun> racuniPoKorisniku = racunInterfacea.listaRacuna(k, Status.AKTIVAN_NEPLACEN);
+//
+//            for (Racun r : racuniPoKorisniku) {
+//                ukupnoZaduzenje = r.getUkupno() + ukupnoZaduzenje;
+//            }
+//
+//            String poruka = " Poštovani,\n"
+//                    + "Danas, " + datumFormat + " u Klubu zaposlenih niste izmirilli račun u iznosu od  " + txtUkupno.getText() + " dinara\n" + "\n"
+//                    + "BR RACUNA: " + id + "\n"
+//                    + stavke.toString() + "\n"
+//                 
+//
+//                    + "\n A ukupno zaduženje po svim neplaćenim računima je: " + ukupnoZaduzenje + "\n" + "\n"
+//                    + "Srdačan pozdrav,\n"
+//                    + "Služba usluga";
+//
+//            poslatiMailInterface.poslatiMail(txtEmail.getText().trim(), poruka);    //"smehmedoviccc@gmail.com"
+//
+//            dispose();
+//        }
 
-        LocalDate ld = jDateChooser1.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-        System.out.println("Datum je " + ld);
-
-        Korisnik k = korisnikInterface.pronadjiKorisnika(txtEmail.getText().trim(), "");
-        System.out.println("email je " + txtEmail.getText().trim());
-
-        if (k.isMailObavestenja() == false) {
-            JOptionPane.showMessageDialog(null, "OVAJ KORISNIK NE ŽELI DA MU SE POŠALJE E-MAIL OBAVEŠTENJA");
-            Racun racun = new Racun(0, ld, stavke, ukupno, k, Status.AKTIVAN_NEPLACEN);
-
-            int id = racunInterfacea.dodajRacunIvratiId(racun);
-
-            TabelaStavkeRacuna tsr = (TabelaStavkeRacuna) tblStavkeRacuna.getModel();
-
-            List<StavkaRacuna> stavkeRacuna = new ArrayList<>();
-
-            for (int i = 0; i < stavke.size(); i++) {
-                StavkaRacuna sr = tsr.getSelectedStavka(i);
-                sr.setRacunId(id);
-                stavkeRacuna.add(sr);
-                stavkeRacunaInterface.dodajStavkaRacuna(sr);
-                proizvodInterface.dodajNaStanjeProizvoda(sr.getProizvod(), sr.getKolicina());
-            }
-            dispose();
-            return;
-
-        }
-
-        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA SAČUVATE RAČUN I POŠALJETE E-MAIL KORISNIKU " + txtIme.getText().trim() + " " + txtPrezime.getText().trim() + " NA E-MAIL ADRESU: " + txtEmail.getText().trim());
-
-        if (odgovor == JOptionPane.NO_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
-            return;
-
-        } else if (odgovor == JOptionPane.YES_OPTION && k.isMailObavestenja() == true) {
-
-            Racun racun = new Racun(0, ld, stavke, ukupno, k, Status.AKTIVAN_NEPLACEN);
-
-            int id = racunInterfacea.dodajRacunIvratiId(racun);
-
-            TabelaStavkeRacuna tsr = (TabelaStavkeRacuna) tblStavkeRacuna.getModel();
-
-            List<StavkaRacuna> stavkeRacuna = new ArrayList<>();
-
-            for (int i = 0; i < stavke.size(); i++) {
-                StavkaRacuna sr = tsr.getSelectedStavka(i);
-                sr.setRacunId(id);
-                stavkeRacuna.add(sr);
-                stavkeRacunaInterface.dodajStavkaRacuna(sr);
-                proizvodInterface.dodajNaStanjeProizvoda(sr.getProizvod(), sr.getKolicina());
-            }
-
-            SimpleDateFormat datum = new SimpleDateFormat("dd.MM.yyyy.", new Locale("sr", "RS"));
-            jDateChooser1.setDateFormatString(datum.toPattern());
-            String datumFormat = datum.format(jDateChooser1.getDate());
-       
-            double ukupnoZaduzenje = 0;
-
-            List<Racun> racuniPoKorisniku = racunInterfacea.listaRacuna(k, Status.AKTIVAN_NEPLACEN);
-
-            for (Racun r : racuniPoKorisniku) {
-                ukupnoZaduzenje = r.getUkupno() + ukupnoZaduzenje;
-            }
-
-            String poruka = " Poštovani,\n"
-                    + "Danas, " + datumFormat + " u Klubu zaposlenih niste izmirilli račun u iznosu od  " + txtUkupno.getText() + " dinara\n" + "\n"
-                    + "BR RACUNA: " + id + "\n"
-                    + stavke.toString() + "\n"
-                 
-
-                    + "\n A ukupno zaduženje po svim neplaćenim računima je: " + ukupnoZaduzenje + "\n" + "\n"
-                    + "Srdačan pozdrav,\n"
-                    + "Služba usluga";
-
-            poslatiMailInterface.poslatiMail(txtEmail.getText().trim(), poruka);    //"smehmedoviccc@gmail.com"
-
-            dispose();
-        }
+           RacunController.sacuvajRacun(jDateChooser1, txtEmail, txtUkupno, stavke, tblStavkeRacuna, this, txtIme, txtPrezime, ukupno);
 
     }//GEN-LAST:event_btnSacuvajRacunActionPerformed
 
@@ -563,19 +578,21 @@ public class RacunForm extends javax.swing.JDialog {
 
     private void btnObrisiProizvodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObrisiProizvodActionPerformed
 
-        if (tblStavkeRacuna.getSelectedRow() == -1) {
-            JOptionPane.showMessageDialog(null, "SELEKTUJTE PROIZVOD KOJI ŽELITE DA UKLONITE IZ LISTE ");
-            return;
-        }
-        int selectedStavka = tblStavkeRacuna.getSelectedRow();
+//        if (tblStavkeRacuna.getSelectedRow() == -1) {
+//            JOptionPane.showMessageDialog(null, "SELEKTUJTE PROIZVOD KOJI ŽELITE DA UKLONITE IZ LISTE ");
+//            return;
+//        }
+//        int selectedStavka = tblStavkeRacuna.getSelectedRow();
+//
+//        TabelaStavkeRacuna tp = (TabelaStavkeRacuna) tblStavkeRacuna.getModel();
+//        StavkaRacuna sr = tp.getSelectedStavka(selectedStavka);
+//
+//        stavke.remove(sr);
+//        System.out.println("Obrisana stavka " + sr.toString());
+//        popuniTabeluStavkaRacuna();
+//        ukupno();
 
-        TabelaStavkeRacuna tp = (TabelaStavkeRacuna) tblStavkeRacuna.getModel();
-        StavkaRacuna sr = tp.getSelectedStavka(selectedStavka);
-
-        stavke.remove(sr);
-        System.out.println("Obrisana stavka " + sr.toString());
-        popuniTabeluStavkaRacuna();
-        ukupno();
+        RacunController.obrisiProizvodIzListe(tblStavkeRacuna, stavke, ukupno, txtUkupno);
 
 
     }//GEN-LAST:event_btnObrisiProizvodActionPerformed
@@ -593,18 +610,20 @@ public class RacunForm extends javax.swing.JDialog {
 
     private void btnPronadjiKorisnikaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPronadjiKorisnikaActionPerformed
 
-        List<Korisnik> novaLista = new ArrayList<>();
-        String searchTherm = txtImeKorisnika.getText().toLowerCase();
+//        List<Korisnik> novaLista = new ArrayList<>();
+//        String searchTherm = txtImeKorisnika.getText().toLowerCase();
+//
+//        List<Korisnik> trazeniKorisnici = korisnikInterface.listaKorisnika().stream().filter(item -> item.getIme().toLowerCase().startsWith(searchTherm)).collect(Collectors.toList());
+//        novaLista.clear();
+//
+//        for (Korisnik k : trazeniKorisnici) {
+//            novaLista.add(k);
+//        }
+//
+//        TableModel tm = new TabelaKorisnik(novaLista);
+//        tblKorisnici.setModel(tm);
 
-        List<Korisnik> trazeniKorisnici = korisnikInterface.listaKorisnika().stream().filter(item -> item.getIme().toLowerCase().startsWith(searchTherm)).collect(Collectors.toList());
-        novaLista.clear();
-
-        for (Korisnik k : trazeniKorisnici) {
-            novaLista.add(k);
-        }
-
-        TableModel tm = new TabelaKorisnik(novaLista);
-        tblKorisnici.setModel(tm);
+            RacunController.pronadjiKorisnika(txtImeKorisnika, tblKorisnici);
 
 
     }//GEN-LAST:event_btnPronadjiKorisnikaActionPerformed

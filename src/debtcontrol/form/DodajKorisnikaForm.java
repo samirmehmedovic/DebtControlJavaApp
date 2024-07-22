@@ -4,6 +4,7 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.DodajKorisnikaController;
 import debtcontrol.model.Korisnik;
 import debtcontrol.model.Proizvod;
 import debtcontrol.repository.KorisnikInterface;
@@ -31,6 +32,7 @@ public class DodajKorisnikaForm extends javax.swing.JDialog {
         lblErroIme.setVisible(false);
         lblerrorPrezime.setVisible(false);
         lblerrorMail.setVisible(false);
+        lblerrormailObavestavanje.setVisible(false);
 
     }
 
@@ -261,58 +263,60 @@ public class DodajKorisnikaForm extends javax.swing.JDialog {
 
     private void btnSacuvajKorisnikaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajKorisnikaActionPerformed
 
-        if (txtIme.getText().isEmpty()) {
-    
-            lblErroIme.setVisible(true);
-            lblErroIme.setText("NISTE UNELI IME ");
-            return;
+//        if (txtIme.getText().isEmpty()) {
+//    
+//            lblErroIme.setVisible(true);
+//            lblErroIme.setText("NISTE UNELI IME ");
+//            return;
+//
+//        }
+//
+//        if (txtPrezime.getText().isEmpty()) {
+//           
+//            lblerrorPrezime.setVisible(true);
+//            lblerrorPrezime.setText("NISTE UNELI PREZIME ");
+//
+//            return;
+//        }
+//
+//        if (txtEmail.getText().isEmpty()) {
+//           
+//            lblerrorMail.setVisible(true);
+//            lblerrorMail.setText("NISTE UNELI E-MAIL NA ODGOVARAJUĆI NAČIN");
+//
+//            return;
+//        }
+//
+//
+//        if (!radioBtnNePrihvata.isSelected() && !radioBtnPrihvata.isSelected()) {
+//
+//            JOptionPane.showMessageDialog(null, "NISTE SELEKTOVALI  E-MAIL OBAVEŠTENJE");
+//
+//            lblerrormailObavestavanje.setVisible(true);
+//            lblerrormailObavestavanje.setText("NISTE SELEKTOVALI  E-MAIL OBAVEŠTENJE");
+//            return;
+//
+//        }
+//        boolean prihvata = radioBtnPrihvata.isSelected();
+//        boolean nePrihvata = radioBtnNePrihvata.isSelected();
+//
+//        if (prihvata) {
+//
+//            Korisnik korisnik = new Korisnik(0, txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), true);
+//            korisnikInterface.dodajKorisnika(korisnik);
+//
+//            System.out.println("Korisnik je " + korisnik);
+//
+//        } else if (nePrihvata) {
+//            Korisnik korisnik = new Korisnik(0, txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), false);
+//            korisnikInterface.dodajKorisnika(korisnik);
+//
+//            System.out.println("Korisnik je " + korisnik);
+//        }
 
-        }
+            DodajKorisnikaController.sacuvajKorisnika(txtIme, txtPrezime, txtEmail, radioBtnPrihvata, radioBtnNePrihvata, lblErroIme, lblerrorPrezime, lblerrorMail, lblerrormailObavestavanje, this);
 
-        if (txtPrezime.getText().isEmpty()) {
-           
-            lblerrorPrezime.setVisible(true);
-            lblerrorPrezime.setText("NISTE UNELI PREZIME ");
-
-            return;
-        }
-
-        if (txtEmail.getText().isEmpty()) {
-           
-            lblerrorMail.setVisible(true);
-            lblerrorMail.setText("NISTE UNELI E-MAIL NA ODGOVARAJUĆI NAČIN");
-
-            return;
-        }
-
-
-        if (!radioBtnNePrihvata.isSelected() && !radioBtnPrihvata.isSelected()) {
-
-            JOptionPane.showMessageDialog(null, "NISTE SELEKTOVALI  E-MAIL OBAVEŠTENJE");
-
-            lblerrormailObavestavanje.setVisible(true);
-            lblerrormailObavestavanje.setText("NISTE SELEKTOVALI  E-MAIL OBAVEŠTENJE");
-            return;
-
-        }
-        boolean prihvata = radioBtnPrihvata.isSelected();
-        boolean nePrihvata = radioBtnNePrihvata.isSelected();
-
-        if (prihvata) {
-
-            Korisnik korisnik = new Korisnik(0, txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), true);
-            korisnikInterface.dodajKorisnika(korisnik);
-
-            System.out.println("Korisnik je " + korisnik);
-
-        } else if (nePrihvata) {
-            Korisnik korisnik = new Korisnik(0, txtIme.getText().trim(), txtPrezime.getText().trim(), txtEmail.getText().trim(), false);
-            korisnikInterface.dodajKorisnika(korisnik);
-
-            System.out.println("Korisnik je " + korisnik);
-        }
-
-        dispose();
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSacuvajKorisnikaActionPerformed
 

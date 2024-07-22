@@ -4,6 +4,7 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.IzvestajProizvodaController;
 import debtcontrol.model.Proizvod;
 import debtcontrol.repository.ProizvodInterface;
 import debtcontrol.repositoryImpl.ProizvodInterfaceImpl;
@@ -604,304 +605,361 @@ public class IzvestajProizvodaForm extends javax.swing.JDialog {
 
     private void btnKafaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKafaActionPerformed
 
-        proizvod = proizvodInterface.pronadjiProizvod(1);
+//        proizvod = proizvodInterface.pronadjiProizvod(1);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
 
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+            IzvestajProizvodaController.izvestajProizvoda(1, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnKafaActionPerformed
 
     private void btnKafaSaMlekomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKafaSaMlekomActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(2);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(2);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+        
+         IzvestajProizvodaController.izvestajProizvoda(2, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnKafaSaMlekomActionPerformed
 
     private void btnKapucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKapucinoActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(3);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(3);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+        
+        
+         IzvestajProizvodaController.izvestajProizvoda(3, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnKapucinoActionPerformed
 
     private void btnEspresoSaMlekomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspresoSaMlekomActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(4);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(4);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(4, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnEspresoSaMlekomActionPerformed
 
     private void btnMlekoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMlekoActionPerformed
 
-        proizvod = proizvodInterface.pronadjiProizvod(8);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(8);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(8, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
 
       
     }//GEN-LAST:event_btnMlekoActionPerformed
 
     private void btnToplaCokoladaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToplaCokoladaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(9);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(9);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(9, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnToplaCokoladaActionPerformed
 
     private void btnKiselaVodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKiselaVodaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(12);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena())); 
-        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(12);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena())); 
+//        txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(12, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnKiselaVodaActionPerformed
 
     private void btnSokBorovnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokBorovnicaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(15);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(15);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(15, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnSokBorovnicaActionPerformed
 
     private void btnEspressoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspressoActionPerformed
 
-        proizvod = proizvodInterface.pronadjiProizvod(7);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(7);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(7, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnEspressoActionPerformed
 
     private void btnKafaKabezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKafaKabezaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(13);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(13);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(13, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnKafaKabezaActionPerformed
 
     private void btnNeskafaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeskafaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(5);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(5);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(5, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnNeskafaActionPerformed
 
     private void btnCajKamilicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajKamilicaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(23);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(23);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(23, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCajKamilicaActionPerformed
 
     private void btnMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(6);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(6);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(6, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnMedActionPerformed
 
     private void btnRosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRosaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(10);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(10);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+//        
+         IzvestajProizvodaController.izvestajProizvoda(10, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnRosaActionPerformed
 
     private void btnSokNarandzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokNarandzaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(14);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(14);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+//        
+         IzvestajProizvodaController.izvestajProizvoda(14, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnSokNarandzaActionPerformed
 
     private void btnCajHibiskusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajHibiskusActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(24);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(24);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(24, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCajHibiskusActionPerformed
 
     private void btnCajNanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajNanaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(19);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(19);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+//        
+         IzvestajProizvodaController.izvestajProizvoda(19, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCajNanaActionPerformed
 
     private void btnCajZeleniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajZeleniActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(20);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(20);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(20, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCajZeleniActionPerformed
 
     private void btnCajJabukaCimetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajJabukaCimetActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(21);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(21);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+//        
+         IzvestajProizvodaController.izvestajProizvoda(21, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCajJabukaCimetActionPerformed
 
     private void btnCajDjumbirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajDjumbirActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(22);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(22);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+//        
+         IzvestajProizvodaController.izvestajProizvoda(22, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCajDjumbirActionPerformed
 
     private void btnCedjenaPomorandzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCedjenaPomorandzaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(25);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(25);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(25, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCedjenaPomorandzaActionPerformed
 
     private void btnCedjeniGrejpfrutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCedjeniGrejpfrutActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(26);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(26);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(26, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCedjeniGrejpfrutActionPerformed
 
     private void btnCedjeniMiksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCedjeniMiksActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(27);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(27);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(27, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnCedjeniMiksActionPerformed
 
     private void btnLimunadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimunadaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(28);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(28);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(28, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnLimunadaActionPerformed
 
     private void btnSvepsBiterLemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSvepsBiterLemonActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(30);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(30);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(30, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnSvepsBiterLemonActionPerformed
 
     private void btnKokaKolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKokaKolaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(29);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(29);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(29, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnKokaKolaActionPerformed
 
     private void btnSvepsTangerinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSvepsTangerinaActionPerformed
-        proizvod = proizvodInterface.pronadjiProizvod(31);
-
-        txtNaziv.setText(proizvod.getNaziv());
-        txtCena.setText(String.valueOf(proizvod.getCena()));
-         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
-        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
-        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
-        pnlPodaciOProizvodu.setVisible(true);
+//        proizvod = proizvodInterface.pronadjiProizvod(31);
+//
+//        txtNaziv.setText(proizvod.getNaziv());
+//        txtCena.setText(String.valueOf(proizvod.getCena()));
+//         txtStanje.setText(String.valueOf(proizvod.getKolicina()));
+//        txtUkupno.setText(String.valueOf(proizvod.getKolicina() * proizvod.getCena()));
+//        txtId.setText(String.valueOf(proizvod.getIdProizvoda()));
+//        pnlPodaciOProizvodu.setVisible(true);
+        
+         IzvestajProizvodaController.izvestajProizvoda(31, proizvod, txtNaziv, txtCena, txtStanje, txtUkupno, txtId, pnlPodaciOProizvodu);
     }//GEN-LAST:event_btnSvepsTangerinaActionPerformed
 
     private void txtNazivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNazivActionPerformed

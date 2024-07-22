@@ -4,6 +4,7 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.IzvestajRacunaController;
 import debtcontrol.model.Racun;
 import debtcontrol.model.Status;
 import debtcontrol.model.StavkaRacuna;
@@ -248,85 +249,93 @@ public class IzvestajRacunaForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNeplaceniRacuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeplaceniRacuniActionPerformed
-        List<Racun> racuni = racunInterface.listaRacunaStatusa(Status.AKTIVAN_NEPLACEN);
+//        List<Racun> racuni = racunInterface.listaRacunaStatusa(Status.AKTIVAN_NEPLACEN);
+//
+//        TableModel tm = new TabelaRacun(racuni);
+//
+//        ukupno = 0;
+//        for (Racun r : racuni) {
+//            ukupno = ukupno + r.getUkupno();
+//        }
+//
+//        txtUkupno.setText(String.valueOf(ukupno));
+//
+//        tblIzvestajRacuna.setModel(tm);
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
+//
+//        lblFinansijskiIzvestaj.setText("Ukupno zaduženje po svim AKTIVNIM-NEPLAĆENIM računima iznosi: ");
+//        lblFinansijskiIzvestaj.setVisible(true);
+//        txtUkupno.setVisible(true);
 
-        TableModel tm = new TabelaRacun(racuni);
-
-        ukupno = 0;
-        for (Racun r : racuni) {
-            ukupno = ukupno + r.getUkupno();
-        }
-
-        txtUkupno.setText(String.valueOf(ukupno));
-
-        tblIzvestajRacuna.setModel(tm);
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
-
-        lblFinansijskiIzvestaj.setText("Ukupno zaduženje po svim AKTIVNIM-NEPLAĆENIM računima iznosi: ");
-        lblFinansijskiIzvestaj.setVisible(true);
-        txtUkupno.setVisible(true);
+          IzvestajRacunaController.izvestajNeplacenihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
 
 
     }//GEN-LAST:event_btnNeplaceniRacuniActionPerformed
 
     private void btnStorniraniRAcuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStorniraniRAcuniActionPerformed
-        List<Racun> racuni = racunInterface.listaRacunaStatusa(Status.STORNIRAN_GRESKA);
+//        List<Racun> racuni = racunInterface.listaRacunaStatusa(Status.STORNIRAN_GRESKA);
+//
+//        TableModel tm = new TabelaRacun(racuni);
+//        ukupno = 0;
+//        for (Racun r : racuni) {
+//            ukupno = ukupno + r.getUkupno();
+//        }
+//
+//        txtUkupno.setText(String.valueOf(ukupno));
+//
+//        tblIzvestajRacuna.setModel(tm);
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
+//
+//        lblFinansijskiIzvestaj.setText("Ukupno zaduženje po svim STORNIRANIM računima iznosi: ");
+//        lblFinansijskiIzvestaj.setVisible(true);
+//        txtUkupno.setVisible(true);
 
-        TableModel tm = new TabelaRacun(racuni);
-        ukupno = 0;
-        for (Racun r : racuni) {
-            ukupno = ukupno + r.getUkupno();
-        }
-
-        txtUkupno.setText(String.valueOf(ukupno));
-
-        tblIzvestajRacuna.setModel(tm);
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
-
-        lblFinansijskiIzvestaj.setText("Ukupno zaduženje po svim STORNIRANIM računima iznosi: ");
-        lblFinansijskiIzvestaj.setVisible(true);
-        txtUkupno.setVisible(true);
+            IzvestajRacunaController.listaStorniranihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
 
     }//GEN-LAST:event_btnStorniraniRAcuniActionPerformed
 
     private void btnPlaceniRacuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceniRacuniActionPerformed
-        List<Racun> racuni = racunInterface.listaRacunaStatusa(Status.NEAKTIVAN_PLACEN);
-
-        TableModel tm = new TabelaRacun(racuni);
-        ukupno = 0;
-        for (Racun r : racuni) {
-            ukupno = ukupno + r.getUkupno();
-        }
-
-        txtUkupno.setText(String.valueOf(ukupno));
-        tblIzvestajRacuna.setModel(tm);
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
-
-        lblFinansijskiIzvestaj.setText("Ukupno zaduženje po svim NEAKTIVNIM-PLAĆENIM računima iznosi: ");
-        lblFinansijskiIzvestaj.setVisible(true);
-        txtUkupno.setVisible(true);
+//        List<Racun> racuni = racunInterface.listaRacunaStatusa(Status.NEAKTIVAN_PLACEN);
+//
+//        TableModel tm = new TabelaRacun(racuni);
+//        ukupno = 0;
+//        for (Racun r : racuni) {
+//            ukupno = ukupno + r.getUkupno();
+//        }
+//
+//        txtUkupno.setText(String.valueOf(ukupno));
+//        tblIzvestajRacuna.setModel(tm);
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
+//
+//        lblFinansijskiIzvestaj.setText("Ukupno zaduženje po svim NEAKTIVNIM-PLAĆENIM računima iznosi: ");
+//        lblFinansijskiIzvestaj.setVisible(true);
+//        txtUkupno.setVisible(true);
+        
+        IzvestajRacunaController.listaPlacenihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
 
     }//GEN-LAST:event_btnPlaceniRacuniActionPerformed
 
     private void btnSviRacuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSviRacuniActionPerformed
-        List<Racun> racuni = racunInterface.listaRacuna();
+//        List<Racun> racuni = racunInterface.listaRacuna();
+//
+//        TableModel tm = new TabelaRacun(racuni);
+//        ukupno = 0;
+//        for (Racun r : racuni) {
+//            ukupno = ukupno + r.getUkupno();
+//        }
+//
+//        txtUkupno.setText(String.valueOf(ukupno));
+//        tblIzvestajRacuna.setModel(tm);
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+//        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
+//
+//        lblFinansijskiIzvestaj.setVisible(false);
+//        txtUkupno.setVisible(false);
 
-        TableModel tm = new TabelaRacun(racuni);
-        ukupno = 0;
-        for (Racun r : racuni) {
-            ukupno = ukupno + r.getUkupno();
-        }
-
-        txtUkupno.setText(String.valueOf(ukupno));
-        tblIzvestajRacuna.setModel(tm);
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
-        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
-
-        lblFinansijskiIzvestaj.setVisible(false);
-        txtUkupno.setVisible(false);
+          IzvestajRacunaController.listaSvihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
 
 
     }//GEN-LAST:event_btnSviRacuniActionPerformed

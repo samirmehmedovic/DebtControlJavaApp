@@ -4,6 +4,8 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.KlubController;
+
 /**
  *
  * @author podrska
@@ -192,52 +194,58 @@ public class KlubForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemDodajProizvodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemDodajProizvodActionPerformed
-        DodajProizvodForm proizvodForm = new DodajProizvodForm(null, true);
-        proizvodForm.setVisible(true);
-
+//        DodajProizvodForm proizvodForm = new DodajProizvodForm(null, true);
+//        proizvodForm.setVisible(true);
+            KlubController.dodajProizvodForm();
     }//GEN-LAST:event_itemDodajProizvodActionPerformed
 
     private void btnOtvoriRacunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtvoriRacunActionPerformed
-        RacunForm racunForm = new RacunForm(null, true);
-        racunForm.setVisible(true);
-
+//        RacunForm racunForm = new RacunForm(null, true);
+//        racunForm.setVisible(true);
+        KlubController.dodajRacunForm();
 
     }//GEN-LAST:event_btnOtvoriRacunActionPerformed
 
     private void MenuItemDodajKorisnikaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemDodajKorisnikaActionPerformed
-        DodajKorisnikaForm dzf = new DodajKorisnikaForm(this, true);
-        dzf.setVisible(true);
+//        DodajKorisnikaForm dzf = new DodajKorisnikaForm(this, true);
+//        dzf.setVisible(true);
+          KlubController.dodajKorinikaForm();
+
     }//GEN-LAST:event_MenuItemDodajKorisnikaActionPerformed
 
     private void menuItemListaKorisnikaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemListaKorisnikaActionPerformed
-        ListaKorisnikaForm lzf = new ListaKorisnikaForm(null, true);
-        lzf.setVisible(true);
-
+//        ListaKorisnikaForm lzf = new ListaKorisnikaForm(null, true);
+//        lzf.setVisible(true);
+              KlubController.dodajListuKorisnikaForm();
 
     }//GEN-LAST:event_menuItemListaKorisnikaActionPerformed
 
     private void menuItemIzvestajiRacuniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemIzvestajiRacuniActionPerformed
-        IzvestajRacunaForm irf = new IzvestajRacunaForm(null, true);
-        irf.setVisible(true);
+//        IzvestajRacunaForm irf = new IzvestajRacunaForm(null, true);
+//        irf.setVisible(true);
+
+              KlubController.dodajIzvestajRacunaForm();
 
     }//GEN-LAST:event_menuItemIzvestajiRacuniActionPerformed
 
     private void menuItemIzvestajiKorisnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemIzvestajiKorisnikActionPerformed
-        IzvestajKorisnikaForm ikf = new IzvestajKorisnikaForm(null, true);
-        ikf.setVisible(true);
-
+//        IzvestajKorisnikaForm ikf = new IzvestajKorisnikaForm(null, true);
+//        ikf.setVisible(true);
+              KlubController.dodajIzvestajKorisnikaForm();
 
     }//GEN-LAST:event_menuItemIzvestajiKorisnikActionPerformed
 
     private void menuItemListaProizvodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemListaProizvodaActionPerformed
-        ListaProizvodaForm lpf = new ListaProizvodaForm(this, true);
-        lpf.setVisible(true);
-
+//        ListaProizvodaForm lpf = new ListaProizvodaForm(this, true);
+//        lpf.setVisible(true);
+          KlubController.dodajListuProizvodaForm();
     }//GEN-LAST:event_menuItemListaProizvodaActionPerformed
 
     private void menuItemIzvestajProizvodiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemIzvestajProizvodiActionPerformed
-        IzvestajProizvodaForm ipf = new IzvestajProizvodaForm(this, true);
-        ipf.setVisible(true);
+//        IzvestajProizvodaForm ipf = new IzvestajProizvodaForm(this, true);
+//        ipf.setVisible(true);
+
+          KlubController.dodajIzvestajProizvodaForm();
 
     }//GEN-LAST:event_menuItemIzvestajProizvodiActionPerformed
 

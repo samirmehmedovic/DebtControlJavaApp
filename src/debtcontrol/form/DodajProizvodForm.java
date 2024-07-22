@@ -4,6 +4,7 @@
  */
 package debtcontrol.form;
 
+import debtcontrol.form.controller.DodajProizvodController;
 import debtcontrol.model.JedinicaMere;
 import debtcontrol.model.Proizvod;
 import debtcontrol.repository.ProizvodInterface;
@@ -28,7 +29,8 @@ public class DodajProizvodForm extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
 
-        popuniCombo();
+//        popuniCombo();
+        DodajProizvodController.popuniCombo(comboBoxJedinicaMere);
         txtKolicina.setText(String.valueOf(0));
     }
 
@@ -150,30 +152,32 @@ public class DodajProizvodForm extends javax.swing.JDialog {
 
     private void btnSacuvajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajActionPerformed
 
-        if (txtNazivProizvoda.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "NIste uneli naziv proizvoda na adekvatan način ");
-            return;
-        }
+//        if (txtNazivProizvoda.getText().isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "NIste uneli naziv proizvoda na adekvatan način ");
+//            return;
+//        }
+//
+//        if (txtCenaProizvoda.getText().isEmpty() || !txtCenaProizvoda.getText().matches("[0-9]*\\.?[0-9]+")) {
+//            JOptionPane.showMessageDialog(null, "NIste uneli cenu na odgovarajuci način");
+//            return;
+//        }
+//
+//        if (txtKolicina.getText().isEmpty() || !txtKolicina.getText().matches("[0-9]*\\.?[0-9]+")) {
+//            JOptionPane.showMessageDialog(null, "NIste uneli količinu na odgovarajući način");
+//            return;
+//        }
+//
+//        Proizvod p = new Proizvod(0, txtNazivProizvoda.getText().trim(), Double.parseDouble(txtCenaProizvoda.getText().trim()), comboBoxJedinicaMere.getSelectedItem().toString(), Double.parseDouble(txtKolicina.getText().trim()), null);
+//        try {
+//            proizvodInterface.dodajNoviProizvod(p);
+//            System.out.println("Unet je proizvod u bazu");
+//            dispose();
+//        } catch (Exception e) {
+//            System.out.println("Nije sacuvan proizvod " + e.getMessage());
+//        }
+//        dispose();
 
-        if (txtCenaProizvoda.getText().isEmpty() || !txtCenaProizvoda.getText().matches("[0-9]*\\.?[0-9]+")) {
-            JOptionPane.showMessageDialog(null, "NIste uneli cenu na odgovarajuci način");
-            return;
-        }
-
-        if (txtKolicina.getText().isEmpty() || !txtKolicina.getText().matches("[0-9]*\\.?[0-9]+")) {
-            JOptionPane.showMessageDialog(null, "NIste uneli količinu na odgovarajući način");
-            return;
-        }
-
-        Proizvod p = new Proizvod(0, txtNazivProizvoda.getText().trim(), Double.parseDouble(txtCenaProizvoda.getText().trim()), comboBoxJedinicaMere.getSelectedItem().toString(), Double.parseDouble(txtKolicina.getText().trim()), null);
-        try {
-            proizvodInterface.dodajNoviProizvod(p);
-            System.out.println("Unet je proizvod u bazu");
-            dispose();
-        } catch (Exception e) {
-            System.out.println("Nije sacuvan proizvod " + e.getMessage());
-        }
-        dispose();
+        DodajProizvodController.sacuvajProizvod(txtNazivProizvoda, txtCenaProizvoda, txtKolicina, this, comboBoxJedinicaMere);
     }//GEN-LAST:event_btnSacuvajActionPerformed
 
 

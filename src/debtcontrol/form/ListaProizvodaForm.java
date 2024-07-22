@@ -5,6 +5,7 @@
 package debtcontrol.form;
 
 //import com.mysql.cj.conf.PropertyKey;
+import debtcontrol.form.controller.ListaProizvodaController;
 import debtcontrol.model.JedinicaMere;
 import debtcontrol.model.Proizvod;
 import debtcontrol.repository.ProizvodInterface;
@@ -32,7 +33,9 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         proizvodInterface = new ProizvodInterfaceImpl();
 
-        popuniTabeluProizvod();
+   //     popuniTabeluProizvod();
+        
+        ListaProizvodaController.popuniTabeluProizvodi(tblListaProizvoda);
         pnlIzmenaProizvoda.setVisible(false);
         popuniCombo();
     }
@@ -109,6 +112,11 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblListaProizvoda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListaProizvodaMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblListaProizvoda);
 
         jButton3.setBackground(new java.awt.Color(204, 204, 255));
@@ -319,38 +327,38 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
 
     private void btnSacuvajIzmeneProizvodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajIzmeneProizvodaActionPerformed
 
-        if (txtNazivProizvoda.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Niste uneli naziv proizvoda");
-            return;
-        }
+//        if (txtNazivProizvoda.getText().trim().isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "Niste uneli naziv proizvoda");
+//            return;
+//        }
+//
+//        if (txtCenaProizvoda.getText().isEmpty() || !txtCenaProizvoda.getText().matches("[0-9]*\\.?[0-9]+")) {     
+//            JOptionPane.showMessageDialog(null, "Niste uneli adekvatno cenu proizvoda");
+//            return;
+//        }
+//        if (txtKolicina.getText().trim().isEmpty() || !txtKolicina.getText().matches("[0-9]*\\.?[0-9]+")) {          
+//            JOptionPane.showMessageDialog(null, "Niste uneli adekvatno količinu"
+//                    + " proizvoda");
+//            return;
+//        }
+//
+//        Proizvod p = new Proizvod(Integer.parseInt(txtId.getText().trim()), txtNazivProizvoda.getText().trim(), Double.parseDouble(txtCenaProizvoda.getText().trim()), comboBoxJedinicaMere.getSelectedItem().toString(), Double.parseDouble(txtKolicina.getText().trim()), null);
+//
+//        int odgovor = JOptionPane.showConfirmDialog(this, "DA LI ŽELITE DA SACUVATE IZMENE");
+//
+//        if (odgovor == JOptionPane.NO_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.YES_OPTION) {
+//            proizvodInterface.izmeniProizvod(p);
+//            System.out.println("Izmenjen je proizvod: " + p.getNaziv());
+//
+//            popuniTabeluProizvod();
 
-        if (txtCenaProizvoda.getText().isEmpty() || !txtCenaProizvoda.getText().matches("[0-9]*\\.?[0-9]+")) {     
-            JOptionPane.showMessageDialog(null, "Niste uneli adekvatno cenu proizvoda");
-            return;
-        }
-        if (txtKolicina.getText().trim().isEmpty() || !txtKolicina.getText().matches("[0-9]*\\.?[0-9]+")) {          
-            JOptionPane.showMessageDialog(null, "Niste uneli adekvatno količinu"
-                    + " proizvoda");
-            return;
-        }
-
-        Proizvod p = new Proizvod(Integer.parseInt(txtId.getText().trim()), txtNazivProizvoda.getText().trim(), Double.parseDouble(txtCenaProizvoda.getText().trim()), comboBoxJedinicaMere.getSelectedItem().toString(), Double.parseDouble(txtKolicina.getText().trim()), null);
-
-        int odgovor = JOptionPane.showConfirmDialog(this, "DA LI ŽELITE DA SACUVATE IZMENE");
-
-        if (odgovor == JOptionPane.NO_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.YES_OPTION) {
-            proizvodInterface.izmeniProizvod(p);
-            System.out.println("Izmenjen je proizvod: " + p.getNaziv());
-
-            popuniTabeluProizvod();
-
-        }
+         ListaProizvodaController.sacuvajIzmene(txtNazivProizvoda, txtCenaProizvoda, txtKolicina, txtId, tblListaProizvoda, comboBoxJedinicaMere, pnlIzmenaProizvoda);
     }//GEN-LAST:event_btnSacuvajIzmeneProizvodaActionPerformed
 
     private void txtNazivProizvodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNazivProizvodaActionPerformed
@@ -363,61 +371,69 @@ public class ListaProizvodaForm extends javax.swing.JDialog {
 
     private void btnIzmeniProizvod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzmeniProizvod1ActionPerformed
 
-        int selectedRow = tblListaProizvoda.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "NISTE SELEKTOVALI PROIZVOD KOJI ŽELITE DA IZMENITE");
-            return;
+//        int selectedRow = tblListaProizvoda.getSelectedRow();
+//        if (selectedRow == -1) {
+//            JOptionPane.showMessageDialog(this, "NISTE SELEKTOVALI PROIZVOD KOJI ŽELITE DA IZMENITE");
+//            return;
+//
+//        }
+//
+//        TabelaProizvod tb = (TabelaProizvod) tblListaProizvoda.getModel();
+//
+//        Proizvod p = tb.getSelectedProizvod(selectedRow);
+//
+//        txtId.setText(String.valueOf(p.getIdProizvoda()));
+//        txtNazivProizvoda.setText(p.getNaziv());
+//        txtKolicina.setText(String.valueOf(p.getKolicina()));
+//        txtCenaProizvoda.setText(String.valueOf(p.getCena()));
+//        comboBoxJedinicaMere.setSelectedItem(p.getJedinicaMere());
+//
+//        pnlIzmenaProizvoda.setVisible(true);
 
-        }
-
-        TabelaProizvod tb = (TabelaProizvod) tblListaProizvoda.getModel();
-
-        Proizvod p = tb.getSelectedProizvod(selectedRow);
-
-        txtId.setText(String.valueOf(p.getIdProizvoda()));
-        txtNazivProizvoda.setText(p.getNaziv());
-        txtKolicina.setText(String.valueOf(p.getKolicina()));
-        txtCenaProizvoda.setText(String.valueOf(p.getCena()));
-        comboBoxJedinicaMere.setSelectedItem(p.getJedinicaMere());
-
-        pnlIzmenaProizvoda.setVisible(true);
+        ListaProizvodaController.izmeniProizvod(txtNazivProizvoda, txtCenaProizvoda, txtKolicina, txtId, tblListaProizvoda, comboBoxJedinicaMere, pnlIzmenaProizvoda);
     }//GEN-LAST:event_btnIzmeniProizvod1ActionPerformed
 
     private void btnobrisiProizvod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnobrisiProizvod1ActionPerformed
 
-        int selectedRow = tblListaProizvoda.getSelectedRow();
-
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "NISTE SELEKTOVALI PROIZVOD KOJI ŽELITE DA OBRIŠETE");
-            return;
-        }
-
-        TabelaProizvod tp = (TabelaProizvod) tblListaProizvoda.getModel();
-
-        Proizvod p = tp.getSelectedProizvod(selectedRow);
-
-        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA OBRIŠETE OVAJ PROIZVOD");
-
-        if (odgovor == JOptionPane.NO_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
-            return;
-        } else if (odgovor == JOptionPane.YES_OPTION) {
-            proizvodInterface.izbrisiProizvod(p);
-
-            System.out.println("Proizvod " + p.getNaziv().toString() + " je obrisan");
-
-            popuniTabeluProizvod();
-
-        }
+//        int selectedRow = tblListaProizvoda.getSelectedRow();
+//
+//        if (selectedRow == -1) {
+//            JOptionPane.showMessageDialog(null, "NISTE SELEKTOVALI PROIZVOD KOJI ŽELITE DA OBRIŠETE");
+//            return;
+//        }
+//
+//        TabelaProizvod tp = (TabelaProizvod) tblListaProizvoda.getModel();
+//
+//        Proizvod p = tp.getSelectedProizvod(selectedRow);
+//
+//        int odgovor = JOptionPane.showConfirmDialog(null, "DA LI ŽELITE DA OBRIŠETE OVAJ PROIZVOD");
+//
+//        if (odgovor == JOptionPane.NO_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CLOSED_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.CANCEL_OPTION) {
+//            return;
+//        } else if (odgovor == JOptionPane.YES_OPTION) {
+//            proizvodInterface.izbrisiProizvod(p);
+//
+//            System.out.println("Proizvod " + p.getNaziv().toString() + " je obrisan");
+//
+//            popuniTabeluProizvod();
+//
+//        }
+        
+        ListaProizvodaController.obrisiProizvod(tblListaProizvoda);
 
     }//GEN-LAST:event_btnobrisiProizvod1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void tblListaProizvodaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListaProizvodaMouseClicked
+        pnlIzmenaProizvoda.setVisible(false);
+    }//GEN-LAST:event_tblListaProizvodaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
