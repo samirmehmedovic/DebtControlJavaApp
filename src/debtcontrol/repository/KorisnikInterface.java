@@ -21,6 +21,6 @@ public interface KorisnikInterface {
     public Korisnik pronadjiKorisnika (String email, String ime);
     public Korisnik pronadjiKorisnika (int racunId);
     public List<Korisnik> listaAktivnihKorisnika(); 
-    public List<Korisnik> pronadjiKorisnike(String email, String ime);
+    
     
 }

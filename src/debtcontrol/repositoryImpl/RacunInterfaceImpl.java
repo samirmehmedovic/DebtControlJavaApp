@@ -189,43 +189,43 @@ public class RacunInterfaceImpl implements RacunInterface {
 
     }
 
-    @Override
-    public Racun pronadjiRacun(String imeKorisnika, int racunId, String emailKorinika) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+//    @Override
+//    public Racun pronadjiRacun(String imeKorisnika, int racunId, String emailKorinika) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
 
-    @Override
-    public List<Racun> listaRacunaPlaceni(Korisnik k) {
-
-        List<Racun> aktivni = new ArrayList<>();
-        List<StavkaRacuna> stav = new ArrayList<>();
-
-        try {
-            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
-
-            String upit2 = "SELECT * from Racun where korisnikId = " + k.getIdKorisnik() + " and status =" + "'NEAKTIVAN_PLACEN'";
-
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(upit2);
-
-            while (rs.next()) {
-
-                List<StavkaRacuna> listaStavki = stavke.stavkePoRacunu(rs.getInt("idRacun"));
-
-                Racun r = new Racun(rs.getInt("idRacun"), rs.getDate("datum").toLocalDate(), listaStavki, rs.getDouble("ukupanIznos"), k, Status.valueOf(rs.getString("status")));
-                aktivni.add(r);
-            }
-
-            statement.close();
-            rs.close();
-            return aktivni;
-
-        } catch (SQLException ex) {
-            System.out.println("Neuspesno izdvajanje racuna" + ex.getMessage());
-            return null;
-        }
-
-    }
+//    @Override
+//    public List<Racun> listaRacunaPlaceni(Korisnik k) {
+//
+//        List<Racun> aktivni = new ArrayList<>();
+//        List<StavkaRacuna> stav = new ArrayList<>();
+//
+//        try {
+//            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
+//
+//            String upit2 = "SELECT * from Racun where korisnikId = " + k.getIdKorisnik() + " and status =" + "'NEAKTIVAN_PLACEN'";
+//
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(upit2);
+//
+//            while (rs.next()) {
+//
+//                List<StavkaRacuna> listaStavki = stavke.stavkePoRacunu(rs.getInt("idRacun"));
+//
+//                Racun r = new Racun(rs.getInt("idRacun"), rs.getDate("datum").toLocalDate(), listaStavki, rs.getDouble("ukupanIznos"), k, Status.valueOf(rs.getString("status")));
+//                aktivni.add(r);
+//            }
+//
+//            statement.close();
+//            rs.close();
+//            return aktivni;
+//
+//        } catch (SQLException ex) {
+//            System.out.println("Neuspesno izdvajanje racuna" + ex.getMessage());
+//            return null;
+//        }
+//
+//    }
 
     @Override
     public List<Racun> listaRacuna(Korisnik k, Status s) {
@@ -262,11 +262,11 @@ public class RacunInterfaceImpl implements RacunInterface {
 
     }
 
-    @Override
-    public Racun vratiRacunStatusa(Status s) {
-
-        return null;
-    }
+//    @Override
+//    public Racun vratiRacunStatusa(Status s) {
+//
+//        return null;
+//    }
 
     @Override
     public void platiRacun(int racunId) {
@@ -319,43 +319,43 @@ public class RacunInterfaceImpl implements RacunInterface {
         }
     }
 
-    @Override
-    public List<Racun> listaRacunaSvihStatusa(Korisnik k, Status s) {
-
-        List<Racun> listaRacuna = new ArrayList<>();
-        //     stavke =new StavkaRacunaInterfaceImpl();
-
-        try {
-            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
-            String upit = "SELECT * from Racun where korisnikId = " + k.getIdKorisnik() + " and status =" + "'STORNIRAN_GRESKA'";
-            //         String upit = "SELECT * from Racun where korisnikId = " + k.getIdKorisnik() + " and status =" + "'AKTIVAN_NEPLACEN'";
-            Statement statement = connection.createStatement();
-
-            ResultSet rs = statement.executeQuery(upit);
-
-            while (rs.next()) {
-
-                LocalDate ld1 = rs.getDate("datum").toLocalDate();
-
-                List<StavkaRacuna> listaStavki = stavke.stavkePoRacunu(rs.getInt("idRacun"));
-
-                Racun r = new Racun(rs.getInt("idRacun"), ld1, listaStavki, rs.getDouble("ukupanIznos"), k, s);
-
-                //     stavka.stavkePoRacunu(rs.getInt("idRacun"))
-                System.out.println("Stavki ima na racunu: " + rs.getInt("idRacun"));
-                listaRacuna.add(r);
-            }
-            statement.close();
-            rs.close();
-            return listaRacuna;
-
-        } catch (SQLException ex) {
-
-            System.out.println("Greska prilikom izvestaja racuna za Korisnika " + ex.getMessage());
-            return null;
-        }
-
-    }
+//    @Override
+//    public List<Racun> listaRacunaSvihStatusa(Korisnik k, Status s) {
+//
+//        List<Racun> listaRacuna = new ArrayList<>();
+//        //     stavke =new StavkaRacunaInterfaceImpl();
+//
+//        try {
+//            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
+//            String upit = "SELECT * from Racun where korisnikId = " + k.getIdKorisnik() + " and status =" + "'STORNIRAN_GRESKA'";
+//            //         String upit = "SELECT * from Racun where korisnikId = " + k.getIdKorisnik() + " and status =" + "'AKTIVAN_NEPLACEN'";
+//            Statement statement = connection.createStatement();
+//
+//            ResultSet rs = statement.executeQuery(upit);
+//
+//            while (rs.next()) {
+//
+//                LocalDate ld1 = rs.getDate("datum").toLocalDate();
+//
+//                List<StavkaRacuna> listaStavki = stavke.stavkePoRacunu(rs.getInt("idRacun"));
+//
+//                Racun r = new Racun(rs.getInt("idRacun"), ld1, listaStavki, rs.getDouble("ukupanIznos"), k, s);
+//
+//                //     stavka.stavkePoRacunu(rs.getInt("idRacun"))
+//                System.out.println("Stavki ima na racunu: " + rs.getInt("idRacun"));
+//                listaRacuna.add(r);
+//            }
+//            statement.close();
+//            rs.close();
+//            return listaRacuna;
+//
+//        } catch (SQLException ex) {
+//
+//            System.out.println("Greska prilikom izvestaja racuna za Korisnika " + ex.getMessage());
+//            return null;
+//        }
+//
+//    }
 
     @Override
     public void stornirajRacun(Racun r) {
@@ -399,41 +399,41 @@ public class RacunInterfaceImpl implements RacunInterface {
     }
 
     @Override
-    public List<Racun> listaRacunaStatusa() {
-            
-         List<Racun> racuni = new ArrayList<>();
-
-        try {
-            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
-
-               
-              String upit2 = "SELECT * FROM Racun Join Korisnik on Korisnik.idKorisnik = Racun.korisnikId  where status ="+"'AKTIVAN_NEPLACEN'" ;
-
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(upit2);
-
-            while (rs.next()) {
-                List<StavkaRacuna> listaStavki = stavke.stavkePoRacunu(rs.getInt("idRacun"));
-                
-                Korisnik k = new Korisnik(rs.getInt("korisnikId"), rs.getString("ime"), rs.getString("prezime"), rs.getString("email"), rs.getBoolean("mailObavestenje"));
-       //         Korisnik ko = korisnikInterface.pronadjiKorisnika(rs.getInt("idRacun"));
-                System.out.println("Korisnik je: "+k);
-               
-                Racun r = new Racun(rs.getInt("idRacun"), rs.getDate("datum").toLocalDate(), listaStavki, rs.getDouble("ukupanIznos"), k, Status.valueOf(rs.getString("status")));
-                racuni.add(r);
-
-            }
-
-            statement.close();
-            rs.close();
-            return racuni;
-
-        } catch (SQLException ex) {
-            System.out.println("Greska prilikom izrade liste Racuna " + ex.getMessage());
-            return null;
-        }
-
-    }
+//    public List<Racun> listaRacunaStatusa() {
+//            
+//         List<Racun> racuni = new ArrayList<>();
+//
+//        try {
+//            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
+//
+//               
+//              String upit2 = "SELECT * FROM Racun Join Korisnik on Korisnik.idKorisnik = Racun.korisnikId  where status ="+"'AKTIVAN_NEPLACEN'" ;
+//
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(upit2);
+//
+//            while (rs.next()) {
+//                List<StavkaRacuna> listaStavki = stavke.stavkePoRacunu(rs.getInt("idRacun"));
+//                
+//                Korisnik k = new Korisnik(rs.getInt("korisnikId"), rs.getString("ime"), rs.getString("prezime"), rs.getString("email"), rs.getBoolean("mailObavestenje"));
+//       //         Korisnik ko = korisnikInterface.pronadjiKorisnika(rs.getInt("idRacun"));
+//                System.out.println("Korisnik je: "+k);
+//               
+//                Racun r = new Racun(rs.getInt("idRacun"), rs.getDate("datum").toLocalDate(), listaStavki, rs.getDouble("ukupanIznos"), k, Status.valueOf(rs.getString("status")));
+//                racuni.add(r);
+//
+//            }
+//
+//            statement.close();
+//            rs.close();
+//            return racuni;
+//
+//        } catch (SQLException ex) {
+//            System.out.println("Greska prilikom izrade liste Racuna " + ex.getMessage());
+//            return null;
+//        }
+//
+//    }
 
      public List<Racun> listaRacunaStatusa(Status s) {      
             
@@ -477,23 +477,23 @@ public class RacunInterfaceImpl implements RacunInterface {
 
     }
 
-    @Override
-    public double ukupanIznozSvihRacuna() {
-        
-        try {
-            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
-        
-            String upit = "SELECT racun";
-            
-            
-        
-        } catch (SQLException ex) {
-
-
-        }
-        return 0;
-
-    }
+//    @Override
+//    public double ukupanIznozSvihRacuna() {
+//        
+//        try {
+//            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
+//        
+//            String upit = "SELECT racun";
+//            
+//            
+//        
+//        } catch (SQLException ex) {
+//
+//
+//        }
+//        return 0;
+//
+//    }
 
    
 

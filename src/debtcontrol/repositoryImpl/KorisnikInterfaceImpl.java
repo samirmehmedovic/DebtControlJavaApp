@@ -154,37 +154,37 @@ public class KorisnikInterfaceImpl implements KorisnikInterface {
         return null;
     }
 
-    @Override
-    public List<Korisnik> pronadjiKorisnike(String email, String ime) {
-
-        List<Korisnik> korisnici = new ArrayList<>();
-
-        try {
-            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
-            String upit = "Select * from korisnik where email = '" + email + "'  or ime = '" + ime + "'";
-
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(upit);
-
-            while (rs.next()) {
-
-                Korisnik k = new Korisnik(rs.getInt("idKorisnik"), rs.getString("ime"), rs.getString("Prezime"), rs.getString("email"), rs.getBoolean("mailObavestenje"));
-
-                korisnici.add(k);
-
-            }
-
-            statement.close();
-            rs.close();
-            return korisnici;
-
-        } catch (SQLException ex) {
-
-            System.out.println("Doslo je do greske prilikom pronalaska zaposlenog preko emiala" + ex.getMessage());
-            return null;
-        }
-
-    }
+//    @Override
+//    public List<Korisnik> pronadjiKorisnike(String email, String ime) {
+//
+//        List<Korisnik> korisnici = new ArrayList<>();
+//
+//        try {
+//            Connection connection = KonekcijaNaBazu.getInstance().getConnection();
+//            String upit = "Select * from korisnik where email = '" + email + "'  or ime = '" + ime + "'";
+//
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(upit);
+//
+//            while (rs.next()) {
+//
+//                Korisnik k = new Korisnik(rs.getInt("idKorisnik"), rs.getString("ime"), rs.getString("Prezime"), rs.getString("email"), rs.getBoolean("mailObavestenje"));
+//
+//                korisnici.add(k);
+//
+//            }
+//
+//            statement.close();
+//            rs.close();
+//            return korisnici;
+//
+//        } catch (SQLException ex) {
+//
+//            System.out.println("Doslo je do greske prilikom pronalaska zaposlenog preko emiala" + ex.getMessage());
+//            return null;
+//        }
+//
+//    }
 
     @Override
     public List<Korisnik> listaAktivnihKorisnika() {
