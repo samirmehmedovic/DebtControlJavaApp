@@ -192,13 +192,24 @@ public class KorisnikInterfaceImpl implements KorisnikInterface {
         List<Korisnik> korisnici = new ArrayList<>();
         try {
             Connection connection = KonekcijaNaBazu.getInstance().getConnection();
-            //      String upit = "Select * from korinik join racun on iDkorisnik = "
+            String upit = "SELECT DISTINCT k. *  from Korisnik k join racun r on k.idKorisnik = r.korisnikId where r.status = "+"'AKTIVAN_NEPLACEN'";
+            
+            PreparedStatement ps = connection.prepareStatement(upit);
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Korisnik k = new Korisnik(rs.getInt("idKorisnik"), rs.getString("ime"), rs.getString("prezime"), rs.getString("email"), rs.getBoolean("mailObavestenje"));
+           korisnici.add(k);
+            }
+            rs.close();
+            ps.close();
 
         } catch (SQLException ex) {
             System.out.println("Greska prilikom kreiranja liste korisnika sa aktivnim racunima" + ex.getMessage());
+            return null;
         }
 
-        return korisnici;
+             return korisnici;
     }
 
     @Override

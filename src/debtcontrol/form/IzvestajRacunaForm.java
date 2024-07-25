@@ -269,6 +269,8 @@ public class IzvestajRacunaForm extends javax.swing.JDialog {
 //        txtUkupno.setVisible(true);
 
           IzvestajRacunaController.izvestajNeplacenihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
+          tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
 
 
     }//GEN-LAST:event_btnNeplaceniRacuniActionPerformed
@@ -293,6 +295,8 @@ public class IzvestajRacunaForm extends javax.swing.JDialog {
 //        txtUkupno.setVisible(true);
 
             IzvestajRacunaController.listaStorniranihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
+            tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
 
     }//GEN-LAST:event_btnStorniraniRAcuniActionPerformed
 
@@ -315,6 +319,8 @@ public class IzvestajRacunaForm extends javax.swing.JDialog {
 //        txtUkupno.setVisible(true);
         
         IzvestajRacunaController.listaPlacenihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
+         tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
 
     }//GEN-LAST:event_btnPlaceniRacuniActionPerformed
 
@@ -336,6 +342,8 @@ public class IzvestajRacunaForm extends javax.swing.JDialog {
 //        txtUkupno.setVisible(false);
 
           IzvestajRacunaController.listaSvihRacuna(tblIzvestajRacuna, txtUkupno, lblFinansijskiIzvestaj);
+           tblIzvestajRacuna.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+        tblIzvestajRacuna.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblIzvestajRacuna));
 
 
     }//GEN-LAST:event_btnSviRacuniActionPerformed

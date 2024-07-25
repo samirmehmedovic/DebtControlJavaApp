@@ -470,6 +470,9 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
 //        txtIznosRacuna.setVisible(false);
 
         IzvestajKorisnikaController.listaSvihRacuna(lblRacuni, txtEmail, txtIme, tblRacuniKorisnika, this, lblIzvestajZaRacune, txtIznosRacuna);
+          tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+
+        tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
 
 
     }//GEN-LAST:event_btnSviRacuniActionPerformed
@@ -503,6 +506,9 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
 //        txtIznosRacuna.setText(String.valueOf(ukupanIznos));
 
  IzvestajKorisnikaController.listaPlacenihRacuna(lblRacuni, txtEmail, txtIme, tblRacuniKorisnika, this, lblIzvestajZaRacune, txtIznosRacuna);
+   tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+
+        tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
 
 
     }//GEN-LAST:event_btnPlaceniRacuniActionPerformed
@@ -601,7 +607,9 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
 //        txtIznosRacuna.setText(String.valueOf(ukupanIznos));
 
          IzvestajKorisnikaController.listaStorniranihRacuna(lblRacuni, txtEmail, txtIme, tblRacuniKorisnika, this, Status.STORNIRAN_GRESKA, lblIzvestajZaRacune, txtIznosRacuna);
+           tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
 
+        tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
 
     }//GEN-LAST:event_btnStorniraniRacuniActionPerformed
 
@@ -764,6 +772,10 @@ public class IzvestajKorisnikaForm extends javax.swing.JDialog {
 
              IzvestajKorisnikaController.listaNeplacenihRacuna(lblRacuni, txtEmail, txtIme, tblRacuniKorisnika, this, lblIzvestajZaRacune, txtIznosRacuna);
         
+               tblRacuniKorisnika.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+
+        tblRacuniKorisnika.getColumnModel().getColumn(7).setCellEditor(new ButtonEditor(tblRacuniKorisnika));
+             
     }//GEN-LAST:event_btnAktivniNeplaceniActionPerformed
 
 

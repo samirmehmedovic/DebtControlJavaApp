@@ -51,6 +51,8 @@ public class KlubForm extends javax.swing.JFrame {
         menuItemIzvestajiKorisnik = new javax.swing.JMenuItem();
         menuItemIzvestajProizvodi = new javax.swing.JMenuItem();
         menuItemIzvestajiRacuni = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        menuItemEmailPodsetnik = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DEBT CONTROL");
@@ -108,7 +110,7 @@ public class KlubForm extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(0, 150, 1950, 10);
+        jSeparator1.setBounds(0, 150, 1950, 3);
 
         jMenu1.setText("KORISNIK");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -188,6 +190,19 @@ public class KlubForm extends javax.swing.JFrame {
 
         jMenuBar1.add(menuIzvestaji);
 
+        jMenu2.setText("PODSETNIK");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+
+        menuItemEmailPodsetnik.setText("E-MAIL PODSETNIK");
+        menuItemEmailPodsetnik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemEmailPodsetnikActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuItemEmailPodsetnik);
+
+        jMenuBar1.add(jMenu2);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -249,6 +264,11 @@ public class KlubForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_menuItemIzvestajProizvodiActionPerformed
 
+    private void menuItemEmailPodsetnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEmailPodsetnikActionPerformed
+        EmailPodsetnikForm epf = new EmailPodsetnikForm(this, true);
+        epf.setVisible(true);
+    }//GEN-LAST:event_menuItemEmailPodsetnikActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuItemDodajKorisnika;
@@ -263,8 +283,10 @@ public class KlubForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JMenuItem menuItemEmailPodsetnik;
     private javax.swing.JMenuItem menuItemIzvestajProizvodi;
     private javax.swing.JMenuItem menuItemIzvestajiKorisnik;
     private javax.swing.JMenuItem menuItemIzvestajiRacuni;
