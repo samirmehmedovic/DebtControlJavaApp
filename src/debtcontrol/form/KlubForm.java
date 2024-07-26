@@ -5,6 +5,9 @@
 package debtcontrol.form;
 
 import debtcontrol.form.controller.KlubController;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -19,6 +22,16 @@ public class KlubForm extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
      //   setExtendedState(MAXIMIZED_BOTH);
+     
+//     URL imageUrl = KlubForm.class.getResource("/images/coca cola.png");
+//     if (imageUrl != null) {
+//            ImageIcon icon = new ImageIcon(imageUrl);
+//            jLabel1 = new JLabel(icon);
+//            
+//        } else {
+//            System.err.println("Slika nije pronađena!");
+//        }
+//     
     }
 
     /**
@@ -72,31 +85,31 @@ public class KlubForm extends javax.swing.JFrame {
         getContentPane().add(btnOtvoriRacun);
         btnOtvoriRacun.setBounds(830, 350, 370, 160);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\podrska\\Desktop\\SLIKE ZA APP\\coca cola.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coca cola.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(1520, 250, 400, 130);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\podrska\\Desktop\\SLIKE ZA APP\\schweppes.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/schweppes.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(90, 720, 300, 170);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\podrska\\Desktop\\SLIKE ZA APP\\png-transparent-fanta-fizzy-drinks-orange-soft-drink-coca-cola-logo-fanta-text-orange-logo-thumbnail.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fanta.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(50, 190, 360, 180);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\podrska\\Desktop\\SLIKE ZA APP\\rosa_logo.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rosa.png"))); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(260, 470, 280, 160);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\podrska\\Desktop\\SLIKE ZA APP\\knjaz_milos.gif")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/knjaz_milos.gif"))); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(1670, 520, 200, 150);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\podrska\\Desktop\\SLIKE ZA APP\\next 1.jpg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/next 1.jpg"))); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(1540, 790, 180, 120);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\podrska\\Desktop\\SLIKE ZA APP\\fon logo.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fon logo.png"))); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(850, 760, 340, 170);
 
