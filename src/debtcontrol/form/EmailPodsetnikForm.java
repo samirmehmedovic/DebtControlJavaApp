@@ -134,6 +134,7 @@ public class EmailPodsetnikForm extends javax.swing.JDialog {
     private void btnPosaljiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPosaljiActionPerformed
  
         EmailPodsetnikController.posaljiPodsetnikPoruku();
+        dispose();
 
     }//GEN-LAST:event_btnPosaljiActionPerformed
 
